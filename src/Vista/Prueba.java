@@ -4,10 +4,17 @@
  */
 package Vista;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.ResultSet;
-import javax.swing.JOptionPane;
-import utils.Conexion;
+import Modelo.DAO.ChoferDAO;
+import Modelo.DAO.ClienteDAO;
+import Modelo.DAO.VehiculoDAO;
+import Modelo.DTO.Chofer;
+import Modelo.DTO.Cliente;
+import Modelo.DTO.Empleado;
+import Modelo.DTO.Vehiculo;
+import java.util.Date;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -32,6 +39,7 @@ public class Prueba extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,6 +50,13 @@ public class Prueba extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("crear");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -49,13 +64,17 @@ public class Prueba extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(161, 161, 161)
                 .addComponent(jButton1)
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addGap(40, 40, 40)
+                .addComponent(jButton2)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(135, 135, 135)
-                .addComponent(jButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
                 .addContainerGap(142, Short.MAX_VALUE))
         );
 
@@ -63,24 +82,67 @@ public class Prueba extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String msg = "";
+        /*ChoferDAO chofer = new ChoferDAO();
         try {
-            Statement sql = Conexion.getConexion().createStatement();
-            String consulta = "select * from CLIENTE";
-            ResultSet res = sql.executeQuery(consulta);
-            while (res.next()) {                
-                msg+=res.getString(1)+"\n";
+            List<Empleado> lista = chofer.getChofer();
+            for (Empleado emp : lista) {
+                System.out.println("Este es el nombre: "+emp.getNombre());
+                System.out.println("Esta es la fecha: "+emp.getFecha());
             }
-            JOptionPane.showMessageDialog(null, msg);
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex.toString());
+            Logger.getLogger(Prueba.class.getName()).log(Level.SEVERE, null, ex);
         }
+        ClienteDAO clt = new ClienteDAO();
+        VehiculoDAO vh = new VehiculoDAO();
+        try {
+            List<Cliente> lista = clt.getClientes();
+            for(Cliente li:lista){
+                System.out.println("Nombre Cliente: "+li.getNombre());
+            }
+        } catch (Exception ex) {
+            System.out.println("Error> "+ex);
+        }*/
+        
+        /*try {
+            List<Vehiculo> lista = vh.getVehiculos();
+            for(Vehiculo li:lista){
+                System.out.println("Nombre Cliente: "+li.getMatricula());
+            }
+        } catch (Exception ex) {
+            System.out.println("Error> "+ex);
+        }*/
+        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        ChoferDAO chofer = new ChoferDAO();
+        try {
+            Chofer emp = new Chofer();
+            emp.setCi("12234324");
+            emp.setApellido("Coso");
+            emp.setNombre("porro");
+            emp.setCelular("7845613");
+            emp.setCorreo("coso@coso.com");
+            emp.setFecha(new Date().toString());
+            emp.setContrasenia("cosopass");
+            emp.setDireccion("maiami");
+            
+            boolean guarda = chofer.crearChofer(emp);
+            if(guarda){
+                System.out.println("Guardado..");
+            }else{
+                System.out.println("No se guardo...");
+            }
+        } catch (Exception ex) {
+            System.out.println("Error> "+ex);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void Main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -114,5 +176,6 @@ public class Prueba extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     // End of variables declaration//GEN-END:variables
 }
