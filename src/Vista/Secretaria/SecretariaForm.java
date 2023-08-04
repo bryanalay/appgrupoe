@@ -48,53 +48,59 @@ public class SecretariaForm extends javax.swing.JFrame {
 
         panelContent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnVehiculo.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnVehiculo.setText("Vehiculo");
         btnVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVehiculoActionPerformed(evt);
             }
         });
-        panelContent.add(btnVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 137, 41));
+        panelContent.add(btnVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 150, 41));
 
+        btnChofer.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnChofer.setText("Chofer");
         btnChofer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnChoferActionPerformed(evt);
             }
         });
-        panelContent.add(btnChofer, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 145, 41));
+        panelContent.add(btnChofer, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 160, 41));
 
+        btnListas.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnListas.setText("Listas");
         btnListas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnListasActionPerformed(evt);
             }
         });
-        panelContent.add(btnListas, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 280, 150, 41));
+        panelContent.add(btnListas, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 280, 150, 41));
 
+        btnCliente.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnCliente.setText("Cliente");
         btnCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClienteActionPerformed(evt);
             }
         });
-        panelContent.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 168, 41));
+        panelContent.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 168, 41));
 
+        btnUsuario.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnUsuario.setText("Usuario");
         btnUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUsuarioActionPerformed(evt);
             }
         });
-        panelContent.add(btnUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 170, 41));
+        panelContent.add(btnUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 170, 41));
 
+        btnEnvio.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnEnvio.setText("Envio");
         btnEnvio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEnvioActionPerformed(evt);
             }
         });
-        panelContent.add(btnEnvio, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, 150, 41));
+        panelContent.add(btnEnvio, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 280, 170, 41));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/FondoLoginY.jpg"))); // NOI18N
         panelContent.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-9, 0, 1010, 450));

@@ -106,7 +106,7 @@ public class ChoferForm extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(table);
 
-        panelCont.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 370, 804, 188));
+        panelCont.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, 804, 188));
 
         jLabel2.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 180, 85));
@@ -183,14 +183,14 @@ public class ChoferForm extends javax.swing.JFrame {
 
         lblChofer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Chofer/chofer.png"))); // NOI18N
         panelCont.add(lblChofer, new org.netbeans.lib.awtextra.AbsoluteConstraints(694, 30, 113, 100));
-        panelCont.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 300, 189, -1));
+        panelCont.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 310, 189, -1));
 
         lblBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/buscar.png"))); // NOI18N
-        panelCont.add(lblBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(859, 287, 48, 42));
+        panelCont.add(lblBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 300, 48, 42));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel8.setText("Buscar");
-        panelCont.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(592, 296, -1, -1));
+        panelCont.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, -1, -1));
 
         txtContra.setEnabled(false);
         panelCont.add(txtContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(366, 241, 178, -1));
@@ -202,9 +202,7 @@ public class ChoferForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(panelCont, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(panelCont, javax.swing.GroupLayout.DEFAULT_SIZE, 935, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
