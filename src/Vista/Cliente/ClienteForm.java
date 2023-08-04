@@ -27,6 +27,8 @@ public class ClienteForm extends javax.swing.JFrame {
         ClienteController ctl = new ClienteController();
         ctl.setCform(this);
         ctl.Load();
+        //icono app
+        setIconImage(new ImageIcon (getClass().getResource("/Vista/Login/Camion.png")).getImage());
         //Tamaño de las imagenes
         ImageIcon img=new ImageIcon(getClass().getResource("/Vista/Cliente/cliente.png"));
         ImageIcon img2=new ImageIcon(getClass().getResource("/Images/buscar.png"));
@@ -238,7 +240,7 @@ public class ClienteForm extends javax.swing.JFrame {
     private javax.swing.JLabel lblCliente;
     public javax.swing.JPanel panelCont;
     public javax.swing.JTable tablaCliente;
-    private javax.swing.JTextField txtBuscar;
+    public javax.swing.JTextField txtBuscar;
     public javax.swing.JTextField txtCorreo;
     public javax.swing.JTextField txtDir;
     public javax.swing.JTextField txtNombre;

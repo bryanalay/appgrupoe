@@ -5,9 +5,13 @@
 package Vista.Vehiculo;
 
 import Controlador.VehiculoController;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -23,6 +27,16 @@ public class VehiculoForm extends javax.swing.JFrame {
         VehiculoController vfrm = new VehiculoController();
         vfrm.setCform(this);
         vfrm.Load();
+        //icono app
+        setIconImage(new ImageIcon (getClass().getResource("/Vista/Login/Camion.png")).getImage());
+        //Tamaño de las imagenes
+        ImageIcon img=new ImageIcon(getClass().getResource("/Vista/Vehiculo/vehiculo.png"));
+        ImageIcon img2=new ImageIcon(getClass().getResource("/Images/buscar.png"));
+        Icon tmn=new ImageIcon(img.getImage().getScaledInstance(lblVehiculo.getWidth(), lblVehiculo.getHeight(), Image.SCALE_DEFAULT));
+        Icon tmn2=new ImageIcon(img2.getImage().getScaledInstance(lblBuscar.getWidth(), lblBuscar.getHeight(), Image.SCALE_DEFAULT));
+        lblBuscar.setIcon(tmn2);
+        lblVehiculo.setIcon(tmn);
+        this.repaint();
     }
 
     /**
@@ -139,7 +153,7 @@ public class VehiculoForm extends javax.swing.JFrame {
         panelContent.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, -1, -1));
 
         cbDisp.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        cbDisp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Disponible", "Ocupado" }));
+        cbDisp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Disponible", "No disponible" }));
         panelContent.add(cbDisp, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 100, -1));
 
         cbTipo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -175,7 +189,7 @@ public class VehiculoForm extends javax.swing.JFrame {
     private void clickPanel(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clickPanel
         this.txtMat.setEditable(true);
     }//GEN-LAST:event_clickPanel
-
+    
     /**
      * @param args the command line arguments
      */
@@ -235,7 +249,7 @@ public class VehiculoForm extends javax.swing.JFrame {
     public javax.swing.JPanel panelContent;
     public javax.swing.JTable tableVeh;
     public javax.swing.JTextField txtAnio;
-    private javax.swing.JTextField txtBuscar;
+    public javax.swing.JTextField txtBuscar;
     public javax.swing.JTextField txtMarca;
     public javax.swing.JTextField txtMat;
     // End of variables declaration//GEN-END:variables

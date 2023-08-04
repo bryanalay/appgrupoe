@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -38,6 +39,16 @@ public class ChoferController {
                 cform.setVisible(false);
                 
 
+            }
+        });
+            cform.txtBuscar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    buscarChofer(chofer.txtBuscar.getText());
+                } catch (SQLException ex) {
+                    System.out.println("Error al buscar chofer");
+                }
             }
         });
     }
@@ -276,8 +287,40 @@ public class ChoferController {
             model.addRow(dt);
             }        
         }else{
-            System.out.println("putos...");
+            System.out.println("Correcto...");
         }
+        chofer.table.setModel(model);
+    }
+    
+    private void buscarChofer(String searchTerm) throws SQLException {
+        List<Chofer> resultados = new ArrayList<>();
+        List<Chofer> data = new ChoferDAO().getChofer();
+
+        for (Chofer chofer : data) {
+            if (chofer.getNombre().toLowerCase().contains(searchTerm.toLowerCase())
+                    || chofer.getCi().toLowerCase().contains(searchTerm.toLowerCase())||
+                chofer.getDisponibilidad().toLowerCase().contains(searchTerm.toLowerCase())) {
+                resultados.add(chofer);
+            }
+        }
+
+        if (resultados.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No se encontraron choferes con la búsqueda proporcionada.");
+        } else {
+            mostrarResultados(resultados);
+            JOptionPane.showMessageDialog(null, "Choferes encontrados:"+ resultados.size());
+        }
+    }
+    private void mostrarResultados(List<Chofer> resultados) {
+        String[] cols = {"CEDULA", "NOMBRE", "APELLIDO", "CELULAR", "FECHA", "CORREO", "DIRECCION", "DISPONIBILIDAD"};
+        DefaultTableModel model = new DefaultTableModel(cols, 0);
+
+        for (Chofer chofer : resultados) {
+            Object[] dt = {chofer.getCi(), chofer.getNombre(), chofer.getApellido(), chofer.getCelular(),
+                    chofer.getFecha(), chofer.getCorreo(), chofer.getDireccion(), chofer.getDisponibilidad()};
+            model.addRow(dt);
+        }
+
         chofer.table.setModel(model);
     }
 }

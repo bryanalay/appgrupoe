@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
@@ -105,6 +106,17 @@ public class ClienteController {
             }
         });
         
+        clt.txtBuscar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    buscarCliente(clt.txtBuscar.getText());
+                } catch (SQLException ex) {
+                    System.out.println("Error al buscar cliente");
+                }
+            }
+        });
+
         cargar();
         limpiarTodo();
     }
@@ -243,6 +255,42 @@ public class ClienteController {
             
             model.addRow(dt);
         }
+        clt.tablaCliente.setModel(model);
+    }
+    
+    // Método para buscar un cliente por su nombre o RUC
+    private void buscarCliente(String searchTerm) throws SQLException {
+        List<Cliente> resultados = new ArrayList<>();
+        List<Cliente> data = new ClienteDAO().getClientes();
+
+        for (Cliente cliente : data) {
+            if (cliente.getNombre().toLowerCase().contains(searchTerm.toLowerCase())
+                    || cliente.getRuc().toLowerCase().contains(searchTerm.toLowerCase())) {
+                resultados.add(cliente);
+            }
+        }
+        if (resultados.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No se encontraron clientes con la búsqueda proporcionada.");
+        } else {
+            mostrarResultados(resultados);
+            JOptionPane.showMessageDialog(null, "Clientes encontrados:"+ resultados.size());
+        }
+
+        mostrarResultados(resultados);
+    }
+
+    // Método para mostrar los resultados de la búsqueda en la tabla
+    private void mostrarResultados(List<Cliente> resultados) {
+        String[] cols = {"RUC", "NOMBRE", "TELEFONO", "CORREO", "DIRECCION"};
+        DefaultTableModel model = new DefaultTableModel(cols, 0);
+
+        for (Cliente cliente : resultados) {
+            Object[] dt = {cliente.getRuc(), cliente.getNombre(), cliente.getTelefono(),
+                    cliente.getCorreo(), cliente.getDireccion()};
+            model.addRow(dt);
+            //JOptionPane.showMessageDialog(null, "Clientes encontrados: " + resultados.size());
+        }
+
         clt.tablaCliente.setModel(model);
     }
 }

@@ -2,6 +2,7 @@ package Controlador;
 
 import Vista.Chofer.ChoferForm;
 import Vista.Cliente.ClienteForm;
+import Vista.Login.LoginForm;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Vista.Secretaria.SecretariaForm;
@@ -79,7 +80,19 @@ public class SecretariaController {
                 sec.setVisible(false);
             }
             
+       
+        });
             
+            sec.lblSesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cerrarSesion(sec);
+            }
         });
     }
+        private void cerrarSesion(SecretariaForm sec) {
+            // Código para cerrar la sesión y mostrar el formulario de inicio de sesión (LoginForm)
+            LoginForm loginForm = new LoginForm();
+            loginForm.setVisible(true);
+            sec.dispose(); // Cierra la ventana actual de SecretariaForm
+        }
 }

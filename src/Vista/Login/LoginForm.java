@@ -22,6 +22,7 @@ public class LoginForm extends javax.swing.JFrame {
         initComponents();
         LoginController lc = new LoginController();
         lc.Login(this);
+        //icono app
         setIconImage(new ImageIcon (getClass().getResource("/Vista/Login/Camion.png")).getImage());
     }
 

@@ -23,6 +23,7 @@ public class SecretariaForm extends javax.swing.JFrame {
         initComponents();
         SecretariaController sec = new SecretariaController();
         sec.menuController(this);
+        //icono app
         setIconImage(new ImageIcon (getClass().getResource("/Vista/Login/Camion.png")).getImage());
     }
 
@@ -42,6 +43,7 @@ public class SecretariaForm extends javax.swing.JFrame {
         btnCliente = new javax.swing.JButton();
         btnUsuario = new javax.swing.JButton();
         btnEnvio = new javax.swing.JButton();
+        lblSesion = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,7 +66,7 @@ public class SecretariaForm extends javax.swing.JFrame {
                 btnChoferActionPerformed(evt);
             }
         });
-        panelContent.add(btnChofer, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 160, 41));
+        panelContent.add(btnChofer, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 170, 41));
 
         btnListas.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnListas.setText("Listas");
@@ -102,18 +104,22 @@ public class SecretariaForm extends javax.swing.JFrame {
         });
         panelContent.add(btnEnvio, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 280, 170, 41));
 
+        lblSesion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblSesion.setText("Cerrar Sesion");
+        panelContent.add(lblSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 40, 90, 20));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/FondoLoginY.jpg"))); // NOI18N
-        panelContent.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-9, 0, 1010, 450));
+        panelContent.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-9, 0, 1000, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelContent, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 993, Short.MAX_VALUE)
+            .addComponent(panelContent, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 993, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelContent, javax.swing.GroupLayout.DEFAULT_SIZE, 454, Short.MAX_VALUE)
+            .addComponent(panelContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -191,6 +197,7 @@ public class SecretariaForm extends javax.swing.JFrame {
     public javax.swing.JButton btnUsuario;
     public javax.swing.JButton btnVehiculo;
     private javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel lblSesion;
     public javax.swing.JPanel panelContent;
     // End of variables declaration//GEN-END:variables
 }

@@ -131,11 +131,11 @@ public class ChoferForm extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel7.setText("Correo");
-        panelCont.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(244, 107, -1, -1));
+        panelCont.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel9.setText("Direccion");
-        panelCont.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(244, 148, -1, -1));
+        panelCont.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel10.setText("Contraseña");
@@ -149,11 +149,11 @@ public class ChoferForm extends javax.swing.JFrame {
         panelCont.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 152, 109, -1));
         panelCont.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 193, 109, -1));
         panelCont.add(txtCelu, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 241, 109, -1));
-        panelCont.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(366, 152, 178, -1));
-        panelCont.add(txtDir, new org.netbeans.lib.awtextra.AbsoluteConstraints(366, 111, 178, -1));
+        panelCont.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 178, -1));
+        panelCont.add(txtDir, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 178, -1));
 
         cbDisp.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        cbDisp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Disponible", "Ocupado" }));
+        cbDisp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Disponible", "No disponible" }));
         panelCont.add(cbDisp, new org.netbeans.lib.awtextra.AbsoluteConstraints(297, 296, 93, -1));
 
         btnGuardar.setBackground(new java.awt.Color(192, 255, 255));
@@ -178,7 +178,7 @@ public class ChoferForm extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel1.setText("F. Nacimiento");
-        panelCont.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 189, -1, -1));
+        panelCont.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, -1, -1));
         panelCont.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(366, 193, 178, -1));
 
         lblChofer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Chofer/chofer.png"))); // NOI18N
@@ -206,7 +206,7 @@ public class ChoferForm extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelCont, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelCont, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
         );
 
         pack();
@@ -280,7 +280,7 @@ public class ChoferForm extends javax.swing.JFrame {
     private javax.swing.JPanel panelCont;
     public javax.swing.JTable table;
     public javax.swing.JTextField txtApellido;
-    private javax.swing.JTextField txtBuscar;
+    public javax.swing.JTextField txtBuscar;
     public javax.swing.JTextField txtCelu;
     public javax.swing.JTextField txtCi;
     public javax.swing.JTextField txtContra;

@@ -6,12 +6,16 @@ package Controlador;
 
 import Modelo.DAO.VehiculoDAO;
 import Modelo.DTO.Vehiculo;
+import Vista.Secretaria.SecretariaForm;
 import Vista.Vehiculo.VehiculoForm;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -22,7 +26,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class VehiculoController {
     VehiculoForm clt;
-
+    //regresar al home
+     
     public VehiculoController(VehiculoForm cform) {
         this.clt = cform;
     }
@@ -98,6 +103,16 @@ public class VehiculoController {
             }
         });
         
+        clt.txtBuscar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    buscarVehiculo(clt.txtBuscar.getText());
+                } catch (SQLException ex) {
+                    System.out.println("Error al buscar vehículo");
+                }
+            }
+        });
         cargar();
         limpiarTodo();
     }
@@ -235,4 +250,36 @@ public class VehiculoController {
         }
         clt.tableVeh.setModel(model);
     }
+    
+    private void buscarVehiculo(String searchTerm) throws SQLException {
+        List<Vehiculo> resultados = new ArrayList<>();
+        List<Vehiculo> data = new VehiculoDAO().getVehiculos();
+
+        for (Vehiculo vehiculo : data) {
+            if (vehiculo.getMatricula().toLowerCase().contains(searchTerm.toLowerCase())
+                    || vehiculo.getMarca().toLowerCase().contains(searchTerm.toLowerCase())) {
+                resultados.add(vehiculo);
+            }
+        }
+
+        if (resultados.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No se encontraron registros para el vehículo buscado.");
+        } else {
+            mostrarResultados(resultados);
+            JOptionPane.showMessageDialog(null, "Vehiculos encontrados:"+ resultados.size());
+        }
+    }
+    
+    private void mostrarResultados(List<Vehiculo> resultados) {
+        String[] cols = {"MATRICULA", "MARCA", "AÑO", "TIPO", "DISPONIBILIDAD"};
+        
+        DefaultTableModel model = new DefaultTableModel(cols, 0);
+        for (Vehiculo vehiculo : resultados) {
+            Object[] dt = {vehiculo.getMatricula(), vehiculo.getMarca(), vehiculo.getAnio(), vehiculo.getTipo(), vehiculo.getDispon()};
+            
+            model.addRow(dt);
+        }
+        clt.tableVeh.setModel(model);
+    }
+
 }
