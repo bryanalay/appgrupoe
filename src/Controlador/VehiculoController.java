@@ -28,8 +28,24 @@ public class VehiculoController {
     VehiculoForm clt;
     //regresar al home
      
-    public VehiculoController(VehiculoForm cform) {
+    public void VehiculoController(VehiculoForm cform) throws SQLException{
         this.clt = cform;
+        cform.btnRegresarAlMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SecretariaForm sec = null;
+                try {
+                    sec = new SecretariaForm();
+                } catch (SQLException ex) {
+                    java.util.logging.Logger.getLogger(SecretariaController.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                }
+                sec.setVisible(true);
+                cform.setVisible(false);
+                
+
+            }
+        });
+        
     }
 
     public VehiculoForm getCform() {

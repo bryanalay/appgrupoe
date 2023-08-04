@@ -7,6 +7,7 @@ package Controlador;
 import Modelo.DAO.ClienteDAO;
 import Modelo.DTO.Cliente;
 import Vista.Cliente.ClienteForm;
+import Vista.Secretaria.SecretariaForm;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -31,8 +32,23 @@ public class ClienteController {
     
     ClienteForm clt;
 
-    public ClienteController(ClienteForm cform) {
+    public void ClienteController(ClienteForm cform) throws SQLException{
         this.clt = cform;
+        cform.btnRegresarAlMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SecretariaForm sec = null;
+                try {
+                    sec = new SecretariaForm();
+                } catch (SQLException ex) {
+                    Logger.getLogger(SecretariaController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                sec.setVisible(true);
+                cform.setVisible(false);
+                
+
+            }
+        });
     }
 
     public ClienteForm getCform() {

@@ -25,6 +25,7 @@ public class VehiculoForm extends javax.swing.JFrame {
     public VehiculoForm() throws SQLException {
         initComponents();
         VehiculoController vfrm = new VehiculoController();
+        vfrm.VehiculoController(this);
         vfrm.setCform(this);
         vfrm.Load();
         //icono app
@@ -70,6 +71,7 @@ public class VehiculoForm extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         txtBuscar = new javax.swing.JTextField();
         lblBuscar = new javax.swing.JLabel();
+        btnRegresarAlMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 255));
@@ -171,6 +173,9 @@ public class VehiculoForm extends javax.swing.JFrame {
         lblBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/buscar.png"))); // NOI18N
         panelContent.add(lblBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 270, 48, 42));
 
+        btnRegresarAlMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/RegresoMenú.png"))); // NOI18N
+        panelContent.add(btnRegresarAlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -234,6 +239,7 @@ public class VehiculoForm extends javax.swing.JFrame {
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnGuardar;
     public javax.swing.JButton btnLimpiar;
+    public javax.swing.JButton btnRegresarAlMenu;
     public javax.swing.JComboBox<String> cbDisp;
     public javax.swing.JComboBox<String> cbTipo;
     private javax.swing.JLabel jLabel1;

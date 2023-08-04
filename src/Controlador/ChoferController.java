@@ -33,7 +33,7 @@ public class ChoferController {
                 try {
                     sec = new SecretariaForm();
                 } catch (SQLException ex) {
-                    Logger.getLogger(ChoferController.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(SecretariaController.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 sec.setVisible(true);
                 cform.setVisible(false);

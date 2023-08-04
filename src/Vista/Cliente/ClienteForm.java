@@ -25,6 +25,7 @@ public class ClienteForm extends javax.swing.JFrame {
     public ClienteForm() throws SQLException {
         initComponents();
         ClienteController ctl = new ClienteController();
+        ctl.ClienteController(this);
         ctl.setCform(this);
         ctl.Load();
         //icono app
@@ -72,6 +73,7 @@ public class ClienteForm extends javax.swing.JFrame {
         txtBuscar = new javax.swing.JTextField();
         lblCliente = new javax.swing.JLabel();
         lblBuscar = new javax.swing.JLabel();
+        btnRegresarAlMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 255));
@@ -161,6 +163,9 @@ public class ClienteForm extends javax.swing.JFrame {
         lblBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/buscar.png"))); // NOI18N
         panelCont.add(lblBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 310, 48, 42));
 
+        btnRegresarAlMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/RegresoMenú.png"))); // NOI18N
+        panelCont.add(btnRegresarAlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -228,6 +233,7 @@ public class ClienteForm extends javax.swing.JFrame {
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnGuardar;
     public javax.swing.JButton btnLimpiar;
+    public javax.swing.JButton btnRegresarAlMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
