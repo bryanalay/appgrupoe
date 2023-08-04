@@ -5,9 +5,12 @@
 package Vista.Chofer;
 
 import Controlador.ChoferController;
+import java.awt.Image;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -23,6 +26,18 @@ public class ChoferForm extends javax.swing.JFrame {
         ChoferController chofer = new ChoferController();
         chofer.setCform(this);
         chofer.Load();
+        jLabel10.setVisible(false);
+        txtContra.setVisible(false);
+        //Icono de la aplicacion
+        setIconImage(new ImageIcon (getClass().getResource("/Vista/Login/Camion.png")).getImage());
+        //Tamaño de las imagenes
+        ImageIcon img=new ImageIcon(getClass().getResource("/Vista/Chofer/chofer.png"));
+        ImageIcon img2=new ImageIcon(getClass().getResource("/Images/buscar.png"));
+        Icon tmn=new ImageIcon(img.getImage().getScaledInstance(lblChofer.getWidth(), lblChofer.getHeight(), Image.SCALE_DEFAULT));
+        Icon tmn2=new ImageIcon(img2.getImage().getScaledInstance(lblBuscar.getWidth(), lblBuscar.getHeight(), Image.SCALE_DEFAULT));
+        lblBuscar.setIcon(tmn2);
+        lblChofer.setIcon(tmn);
+        this.repaint();
     }
 
     /**
@@ -53,22 +68,28 @@ public class ChoferForm extends javax.swing.JFrame {
         txtCorreo = new javax.swing.JTextField();
         txtDir = new javax.swing.JTextField();
         cbDisp = new javax.swing.JComboBox<>();
-        txtContra = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtEdad = new javax.swing.JTextField();
+        lblChofer = new javax.swing.JLabel();
+        txtBuscar = new javax.swing.JTextField();
+        lblBuscar = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        txtContra = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 255));
 
+        panelCont.setBackground(new java.awt.Color(223, 223, 236));
         panelCont.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 clickPanel(evt);
             }
         });
+        panelCont.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -83,179 +104,106 @@ public class ChoferForm extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(table);
 
+        panelCont.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 370, 804, 188));
+
+        jLabel2.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 180, 85));
         jLabel2.setText("Chofer");
+        panelCont.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(426, 10, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel3.setText("CI");
+        panelCont.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 107, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel4.setText("Nombre");
+        panelCont.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 148, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel5.setText("Apellido");
+        panelCont.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 189, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel6.setText("Celular");
+        panelCont.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 237, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel7.setText("Correo");
+        panelCont.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(244, 107, -1, -1));
 
+        jLabel9.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel9.setText("Direccion");
+        panelCont.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(244, 148, -1, -1));
 
+        jLabel10.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel10.setText("Contraseña");
+        jLabel10.setEnabled(false);
+        panelCont.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 237, -1, -1));
 
+        jLabel11.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel11.setText("Disponibilidad");
+        panelCont.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 296, -1, -1));
+        panelCont.add(txtCi, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 111, 109, -1));
+        panelCont.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 152, 109, -1));
+        panelCont.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 193, 109, -1));
+        panelCont.add(txtCelu, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 241, 109, -1));
+        panelCont.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(366, 152, 178, -1));
+        panelCont.add(txtDir, new org.netbeans.lib.awtextra.AbsoluteConstraints(366, 111, 178, -1));
 
-        txtCi.setText("jTextField1");
-
-        txtNombre.setText("jTextField2");
-
-        txtApellido.setText("jTextField3");
-
-        txtCelu.setText("jTextField4");
-
-        txtCorreo.setText("jTextField5");
-
-        txtDir.setText("jTextField6");
-
+        cbDisp.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         cbDisp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Disponible", "Ocupado" }));
+        panelCont.add(cbDisp, new org.netbeans.lib.awtextra.AbsoluteConstraints(297, 296, 93, -1));
 
-        txtContra.setText("jTextField7");
-
+        btnGuardar.setBackground(new java.awt.Color(192, 255, 255));
+        btnGuardar.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
         btnGuardar.setText("Guardar");
+        panelCont.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 158, 121, -1));
 
+        btnEliminar.setBackground(new java.awt.Color(192, 255, 255));
+        btnEliminar.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
         btnEliminar.setText("Eliminar");
+        panelCont.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(624, 230, 121, -1));
 
+        btnEditar.setBackground(new java.awt.Color(192, 255, 255));
+        btnEditar.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
         btnEditar.setText("Editar");
+        panelCont.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(763, 158, 121, -1));
 
+        btnLimpiar.setBackground(new java.awt.Color(192, 255, 255));
+        btnLimpiar.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
         btnLimpiar.setText("Limpiar");
+        panelCont.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(763, 230, 121, -1));
 
+        jLabel1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel1.setText("F. Nacimiento");
+        panelCont.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 189, -1, -1));
+        panelCont.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(366, 193, 178, -1));
 
-        txtEdad.setText("jTextField8");
+        lblChofer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Chofer/chofer.png"))); // NOI18N
+        panelCont.add(lblChofer, new org.netbeans.lib.awtextra.AbsoluteConstraints(694, 30, 113, 100));
+        panelCont.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 300, 189, -1));
 
-        javax.swing.GroupLayout panelContLayout = new javax.swing.GroupLayout(panelCont);
-        panelCont.setLayout(panelContLayout);
-        panelContLayout.setHorizontalGroup(
-            panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelContLayout.createSequentialGroup()
-                .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelContLayout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 804, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panelContLayout.createSequentialGroup()
-                                .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelContLayout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtEdad, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE))
-                                    .addGroup(panelContLayout.createSequentialGroup()
-                                        .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel5)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel3)
-                                            .addComponent(jLabel6))
-                                        .addGap(28, 28, 28)
-                                        .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtCelu, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
-                                            .addComponent(txtCi)
-                                            .addComponent(txtNombre)
-                                            .addComponent(txtApellido))))
-                                .addGap(29, 29, 29)
-                                .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(panelContLayout.createSequentialGroup()
-                                        .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel9)
-                                            .addComponent(jLabel7))
-                                        .addGap(32, 32, 32)
-                                        .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtDir)
-                                            .addComponent(txtCorreo)))
-                                    .addGroup(panelContLayout.createSequentialGroup()
-                                        .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel11)
-                                            .addComponent(jLabel10))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(cbDisp, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(txtContra))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnGuardar)
-                                    .addComponent(btnEliminar))
-                                .addGap(51, 51, 51)
-                                .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnLimpiar)
-                                    .addComponent(btnEditar))
-                                .addGap(109, 109, 109))))
-                    .addGroup(panelContLayout.createSequentialGroup()
-                        .addGap(403, 403, 403)
-                        .addComponent(jLabel2)))
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
-        panelContLayout.setVerticalGroup(
-            panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelContLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addGap(25, 25, 25)
-                .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panelContLayout.createSequentialGroup()
-                        .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(txtCi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7)
-                            .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel4)
-                                .addComponent(btnGuardar)
-                                .addComponent(btnEditar))))
-                    .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel9)
-                        .addComponent(txtDir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelContLayout.createSequentialGroup()
-                        .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelContLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel5)
-                                    .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(panelContLayout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnEliminar)
-                                    .addComponent(btnLimpiar))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(txtCelu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(panelContLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(cbDisp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(txtContra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addGroup(panelContLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45))
-        );
+        lblBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/buscar.png"))); // NOI18N
+        panelCont.add(lblBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(859, 287, 48, 42));
+
+        jLabel8.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel8.setText("Buscar");
+        panelCont.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(592, 296, -1, -1));
+
+        txtContra.setEnabled(false);
+        panelCont.add(txtContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(366, 241, 178, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelCont, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(panelCont, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelCont, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panelCont, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -320,11 +268,15 @@ public class ChoferForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblBuscar;
+    private javax.swing.JLabel lblChofer;
     private javax.swing.JPanel panelCont;
     public javax.swing.JTable table;
     public javax.swing.JTextField txtApellido;
+    private javax.swing.JTextField txtBuscar;
     public javax.swing.JTextField txtCelu;
     public javax.swing.JTextField txtCi;
     public javax.swing.JTextField txtContra;
