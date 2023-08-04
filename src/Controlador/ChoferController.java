@@ -3,12 +3,15 @@ package Controlador;
 import Modelo.DAO.ChoferDAO;
 import Modelo.DTO.Chofer;
 import Vista.Chofer.ChoferForm;
+import Vista.Secretaria.SecretariaForm;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -19,8 +22,24 @@ import javax.swing.table.DefaultTableModel;
 public class ChoferController {
     ChoferForm chofer;
 
-    public ChoferController(ChoferForm cform) {
+        public void ChoferController(ChoferForm cform) throws SQLException{
         this.chofer = cform;
+            
+            cform.btnRegresarMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SecretariaForm sec = null;
+                try {
+                    sec = new SecretariaForm();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ChoferController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                sec.setVisible(true);
+                cform.setVisible(false);
+                
+
+            }
+        });
     }
 
     public ChoferForm getCform() {

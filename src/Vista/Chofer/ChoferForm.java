@@ -24,6 +24,7 @@ public class ChoferForm extends javax.swing.JFrame {
     public ChoferForm() throws SQLException {
         initComponents();
         ChoferController chofer = new ChoferController();
+        chofer.ChoferController(this);
         chofer.setCform(this);
         chofer.Load();
         jLabel10.setVisible(false);
@@ -79,6 +80,7 @@ public class ChoferForm extends javax.swing.JFrame {
         lblBuscar = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         txtContra = new javax.swing.JTextField();
+        btnRegresarMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 255));
@@ -193,6 +195,9 @@ public class ChoferForm extends javax.swing.JFrame {
         txtContra.setEnabled(false);
         panelCont.add(txtContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(366, 241, 178, -1));
 
+        btnRegresarMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/RegresoMenú.png"))); // NOI18N
+        panelCont.add(btnRegresarMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 50, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -258,6 +263,7 @@ public class ChoferForm extends javax.swing.JFrame {
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnGuardar;
     public javax.swing.JButton btnLimpiar;
+    public javax.swing.JButton btnRegresarMenu;
     public javax.swing.JComboBox<String> cbDisp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
