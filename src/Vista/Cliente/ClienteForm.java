@@ -109,7 +109,7 @@ public class ClienteForm extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 180, 85));
         jLabel1.setText("Cliente");
-        panelCont.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, -1, -1));
+        panelCont.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel2.setText("RUC");
@@ -146,18 +146,18 @@ public class ClienteForm extends javax.swing.JFrame {
         tablaCliente.setEditingRow(0);
         jScrollPane1.setViewportView(tablaCliente);
 
-        panelCont.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 764, 184));
+        panelCont.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 764, 184));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel8.setText("Buscar");
-        panelCont.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, -1, -1));
-        panelCont.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, 189, -1));
+        panelCont.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, -1, -1));
+        panelCont.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 189, -1));
 
         lblCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Cliente/cliente.png"))); // NOI18N
         panelCont.add(lblCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, 81, 79));
 
         lblBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/buscar.png"))); // NOI18N
-        panelCont.add(lblBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, 48, 42));
+        panelCont.add(lblBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 310, 48, 42));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
