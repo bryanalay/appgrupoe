@@ -56,10 +56,26 @@ public class SecretariaController {
             sec.btnUsuario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
-                user.setVisible(true);
+                // Obtener los datos del empleado desde la base de datos
+                try {
+            // Proporciona el CI y contraseña correctos
+            String ciEmpleado = "1719963470"; // Reemplaza con el CI correcto
+            String contrasenia = "123"; // Reemplaza con la contraseña correcta
+            
+            Empleado empleado = obtenerEmpleadoDesdeBD(ciEmpleado, contrasenia);
+
+            if (empleado != null) {
+                UsuarioForm usuarioForm = new UsuarioForm();
+                usuarioForm.mostrarDatosEmpleado(empleado);
+                usuarioForm.setVisible(true);
                 sec.setVisible(false);
+            } else {
+                JOptionPane.showMessageDialog(null, "Credenciales incorrectas. Por favor, intente nuevamente.");
             }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }            
+        }
             
             
         });
@@ -105,30 +121,11 @@ public class SecretariaController {
             sec.dispose(); // Cierra la ventana actual de SecretariaForm
         }
         
-            private void btnUsuario(String ci,String contra,LoginForm vista) throws SQLException{
-        LoginDAO ld = new LoginDAO();
-        Empleado emp = ld.login(ci, contra);
-        
-        if(emp==null){            
-            //JOptionPane.showMessageDialog(null, "CI o Contraseña incorrecta");            
-        } else {
-            //llamo secretaria form y le paso el empleado
-            vista.setVisible(false);
-            //System.out.println("Logueado..!!");
-            abrirUsuario(emp.getCi(),emp.getNombre(), emp.getApellido(), emp.getCelular(), emp.getFecha(), emp.getCorreo(), emp.getDireccion());
-        }
-    }
-    
-    private void abrirUsuario(String ci,String nombre, String apellido, String celular, String fecha, String correo, String direccion) throws SQLException{
-        UsuarioForm user = new UsuarioForm();
-        user.lblNombre.setText(nombre);
-        user.lblCi.setText(ci);
-        user.lblCelular.setText(celular);
-        user.lblApellido.setText(apellido);
-        user.lblCorreo.setText(correo);
-        user.lblFecha.setText(fecha);
-        user.lblDireccion.setText(direccion);
-        
-        user.setVisible(true);
+        private Empleado obtenerEmpleadoDesdeBD(String ci, String password) throws SQLException {
+    // Aquí debes implementar la lógica para obtener los datos del empleado desde la base de datos
+    // y retornar una instancia de Empleado con esos datos
+    LoginDAO loginDAO = new LoginDAO(); // Suponiendo que tienes un DAO para acceder a la base de datos
+    Empleado emp= loginDAO.login(ci, password); // Suponiendo que tienes un método en el DAO para obtener el empleado por su ID
+    return emp;
     }
 }

@@ -17,8 +17,9 @@ public class Empleado {
     String correo;
     String direccion;
     String contrasenia;
-
-    public Empleado(String ci, String nombre, String apellido, String celular, 
+    
+    
+    public Empleado (String ci, String nombre, String apellido, String celular, 
             String fecha, String correo, String direccion, String contrasenia) {
         this.ci = ci;
         this.nombre = nombre;
@@ -29,8 +30,11 @@ public class Empleado {
         this.direccion = direccion;
         this.contrasenia = contrasenia;
     }
+
+    public Empleado() {
+        
+    }
     
-    public Empleado(){}
 
     public String getCi() {
         return ci;

@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import utils.Conexion;
 
+
 /**
  *
  * @author Almi-
@@ -27,7 +28,8 @@ public class LoginDAO {
             if(result.next()){
                 emp.setCi(result.getString("CI"));
                 emp.setNombre(result.getString("Nombre"));
-                emp.setApellido(result.getString("Apellido"));                
+                emp.setApellido(result.getString("Apellido")); 
+                //emp.setCelular(result.getString("Celular"));
                 //String cargo = result.getString("CARGO");
                 return emp;              
             }

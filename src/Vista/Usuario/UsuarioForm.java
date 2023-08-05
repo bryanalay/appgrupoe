@@ -6,25 +6,43 @@
 package Vista.Usuario;
 
 import Controlador.UsuarioController;
+import Modelo.DTO.Empleado;
 import java.awt.Image;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+
 
 /**
  *
  * @author ERICK
  */
 public class UsuarioForm extends javax.swing.JFrame {
+    private Empleado empleado;
 
+    // ... otros códigos y constructor
+
+    // Método para establecer los datos del empleado en los campos
+    public void mostrarDatosEmpleado(Empleado empleado) {
+        lblCi.setText(empleado.getCi());
+        lblNombre.setText(empleado.getNombre());
+        lblApellido.setText(empleado.getApellido());
+        lblCelular.setText(empleado.getCelular());
+        lblFecha.setText(empleado.getFecha());
+        lblCorreo.setText(empleado.getCorreo());
+        lblDireccion.setText(empleado.getDireccion());
+        
+        // ... mostrar otros datos en los campos correspondientes
+    }
     /**
      * Creates new form UsuarioForm
      */
-    public UsuarioForm() {
+    public UsuarioForm() throws SQLException {
         initComponents();
         UsuarioController usuario = new UsuarioController();
-        //usuario.UsuarioController(this);
-        //usuario.setUform(this);
-
+        usuario.UsuarioController(this);
         //Icono de la aplicacion
         setIconImage(new ImageIcon (getClass().getResource("/Vista/Login/Camion.png")).getImage());
         //Tamaño de las imagenes
@@ -168,7 +186,11 @@ public class UsuarioForm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UsuarioForm().setVisible(true);
+                try {
+                    new UsuarioForm().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(UsuarioForm.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -193,4 +215,5 @@ public class UsuarioForm extends javax.swing.JFrame {
     public javax.swing.JLabel lblNombre;
     public javax.swing.JLabel lblUsuario;
     // End of variables declaration//GEN-END:variables
+
 }
