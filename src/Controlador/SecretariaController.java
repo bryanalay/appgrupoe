@@ -7,7 +7,7 @@ import Vista.Login.LoginForm;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Vista.Secretaria.SecretariaForm;
-import Vista.Usuario.UsuarioForm;
+//import Vista.Usuario.UsuarioForm;
 import Vista.Vehiculo.VehiculoForm;
 import java.sql.SQLException;
 import javax.swing.JPanel;
@@ -21,7 +21,7 @@ public class SecretariaController {
         ChoferForm chofer = new ChoferForm();
         ClienteForm clt = new ClienteForm();
         VehiculoForm veh = new VehiculoForm();
-        UsuarioForm user= new UsuarioForm();
+        //UsuarioForm user= new UsuarioForm();
         FacturaForm fac=new FacturaForm();
 //        UsuarioForm UsuarioF = new UsuarioForm();
         sec.btnChofer.addActionListener(new ActionListener() {
@@ -52,7 +52,7 @@ public class SecretariaController {
             sec.btnUsuario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                user.setVisible(true);
+                //user.setVisible(true);
                 sec.setVisible(false);
             }
             
