@@ -37,18 +37,31 @@ public class SecretariaForm extends javax.swing.JFrame {
     private void initComponents() {
 
         panelContent = new javax.swing.JPanel();
+        lblSesion = new javax.swing.JLabel();
         btnVehiculo = new javax.swing.JButton();
         btnChofer = new javax.swing.JButton();
         btnListas = new javax.swing.JButton();
         btnCliente = new javax.swing.JButton();
         btnUsuario = new javax.swing.JButton();
         btnEnvio = new javax.swing.JButton();
-        lblSesion = new javax.swing.JLabel();
+        btnChofer2 = new javax.swing.JButton();
+        btnEnvios2 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        btnUsuario2 = new javax.swing.JButton();
+        btnCliente2 = new javax.swing.JButton();
+        btnVehiculo2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        panelBarra = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
 
         panelContent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblSesion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblSesion.setText("Cerrar Sesion");
+        panelContent.add(lblSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 90, 20));
 
         btnVehiculo.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnVehiculo.setText("Vehiculo");
@@ -57,7 +70,7 @@ public class SecretariaForm extends javax.swing.JFrame {
                 btnVehiculoActionPerformed(evt);
             }
         });
-        panelContent.add(btnVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 150, 41));
+        panelContent.add(btnVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 210, 150, 41));
 
         btnChofer.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnChofer.setText("Chofer");
@@ -66,7 +79,7 @@ public class SecretariaForm extends javax.swing.JFrame {
                 btnChoferActionPerformed(evt);
             }
         });
-        panelContent.add(btnChofer, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 170, 41));
+        panelContent.add(btnChofer, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 170, 41));
 
         btnListas.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnListas.setText("Listas");
@@ -75,7 +88,7 @@ public class SecretariaForm extends javax.swing.JFrame {
                 btnListasActionPerformed(evt);
             }
         });
-        panelContent.add(btnListas, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 280, 150, 41));
+        panelContent.add(btnListas, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 400, 150, 41));
 
         btnCliente.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnCliente.setText("Cliente");
@@ -84,7 +97,7 @@ public class SecretariaForm extends javax.swing.JFrame {
                 btnClienteActionPerformed(evt);
             }
         });
-        panelContent.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 168, 41));
+        panelContent.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 168, 41));
 
         btnUsuario.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnUsuario.setText("Usuario");
@@ -93,7 +106,7 @@ public class SecretariaForm extends javax.swing.JFrame {
                 btnUsuarioActionPerformed(evt);
             }
         });
-        panelContent.add(btnUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 170, 41));
+        panelContent.add(btnUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 170, 41));
 
         btnEnvio.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnEnvio.setText("Envio");
@@ -102,20 +115,59 @@ public class SecretariaForm extends javax.swing.JFrame {
                 btnEnvioActionPerformed(evt);
             }
         });
-        panelContent.add(btnEnvio, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 280, 170, 41));
+        panelContent.add(btnEnvio, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, 170, 41));
 
-        lblSesion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblSesion.setText("Cerrar Sesion");
-        panelContent.add(lblSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 40, 90, 20));
+        btnChofer2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/MenuChofer.png"))); // NOI18N
+        btnChofer2.setBorder(null);
+        btnChofer2.setContentAreaFilled(false);
+        panelContent.add(btnChofer2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
+
+        btnEnvios2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/MenuEnvios.png"))); // NOI18N
+        btnEnvios2.setBorder(null);
+        btnEnvios2.setContentAreaFilled(false);
+        panelContent.add(btnEnvios2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, -1, -1));
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/MenuListas.png"))); // NOI18N
+        jButton2.setBorder(null);
+        jButton2.setContentAreaFilled(false);
+        panelContent.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 280, -1, -1));
+
+        btnUsuario2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/MenuUsuario.png"))); // NOI18N
+        btnUsuario2.setBorder(null);
+        btnUsuario2.setContentAreaFilled(false);
+        panelContent.add(btnUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, -1, -1));
+
+        btnCliente2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/MenuCliente.png"))); // NOI18N
+        btnCliente2.setBorder(null);
+        btnCliente2.setContentAreaFilled(false);
+        panelContent.add(btnCliente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, -1, -1));
+
+        btnVehiculo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/MenuVehiculo.png"))); // NOI18N
+        btnVehiculo2.setBorder(null);
+        btnVehiculo2.setContentAreaFilled(false);
+        panelContent.add(btnVehiculo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 110, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/FondoLoginY.jpg"))); // NOI18N
-        panelContent.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-9, 0, 1000, 450));
+        panelContent.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 0, 840, 490));
+
+        javax.swing.GroupLayout panelBarraLayout = new javax.swing.GroupLayout(panelBarra);
+        panelBarra.setLayout(panelBarraLayout);
+        panelBarraLayout.setHorizontalGroup(
+            panelBarraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 840, Short.MAX_VALUE)
+        );
+        panelBarraLayout.setVerticalGroup(
+            panelBarraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        panelContent.add(panelBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelContent, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 993, Short.MAX_VALUE)
+            .addComponent(panelContent, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -191,13 +243,20 @@ public class SecretariaForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnChofer;
+    private javax.swing.JButton btnChofer2;
     public javax.swing.JButton btnCliente;
+    private javax.swing.JButton btnCliente2;
     public javax.swing.JButton btnEnvio;
+    private javax.swing.JButton btnEnvios2;
     public javax.swing.JButton btnListas;
     public javax.swing.JButton btnUsuario;
+    private javax.swing.JButton btnUsuario2;
     public javax.swing.JButton btnVehiculo;
+    private javax.swing.JButton btnVehiculo2;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JLabel lblSesion;
+    private javax.swing.JPanel panelBarra;
     public javax.swing.JPanel panelContent;
     // End of variables declaration//GEN-END:variables
 }
