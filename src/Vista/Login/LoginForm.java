@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
  * @author Almi-
  */
 public class LoginForm extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form LoginForm
      */

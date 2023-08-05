@@ -4,9 +4,11 @@ import Modelo.DAO.LoginDAO;
 import Modelo.DTO.Empleado;
 import Vista.Secretaria.SecretariaForm;
 import Vista.Login.LoginForm;
+import Vista.Usuario.UsuarioForm;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 /**
  *
@@ -27,6 +29,7 @@ public class LoginController {
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                 }
+                
             }
         });
         
@@ -48,9 +51,10 @@ public class LoginController {
     
     private void abirMenuSecretaria(String ci,String nombre) throws SQLException{
         SecretariaForm secre = new SecretariaForm();
-//        secre.lblNombre.setText(nombre);
-//        secre.lblCi.setText(ci);
+        //secre.lblNombre.setText(nombre);
+        //secre.lblCi.setText(ci);
         
         secre.setVisible(true);
     }
+    
 }
