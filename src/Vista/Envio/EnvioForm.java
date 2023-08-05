@@ -1,22 +1,47 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista.Envio;
 
+import Vista.Cliente.*;
+import Controlador.ClienteController;
+import java.awt.Image;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
+
 /**
  *
- * @author ERICK
+ * @author Almi-
  */
 public class EnvioForm extends javax.swing.JFrame {
 
     /**
-     * Creates new form EnvioForm
+     * Creates new form ClienteForm
      */
-    public EnvioForm() {
+    public EnvioForm() throws SQLException {
         initComponents();
+        ClienteController envio = new ClienteController();
+//        envio.ClienteController(this);
+//        envio.setCform(this);
+//        envio.Load();
+        //icono app
+        setIconImage(new ImageIcon (getClass().getResource("/Vista/Login/Camion.png")).getImage());
+        //Tamaño de las imagenes
+        ImageIcon img=new ImageIcon(getClass().getResource("/Vista/Cliente/cliente.png"));
+        ImageIcon img2=new ImageIcon(getClass().getResource("/Images/buscar.png"));
+        Icon tmn=new ImageIcon(img.getImage().getScaledInstance(lblCliente.getWidth(), lblCliente.getHeight(), Image.SCALE_DEFAULT));
+        Icon tmn2=new ImageIcon(img2.getImage().getScaledInstance(lblBuscar.getWidth(), lblBuscar.getHeight(), Image.SCALE_DEFAULT));
+        lblCliente.setIcon(tmn);
+        lblBuscar.setIcon(tmn2);
+        this.repaint();
+        
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,21 +52,154 @@ public class EnvioForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panelCont = new javax.swing.JPanel();
+        txtNombre = new javax.swing.JTextField();
+        txtTel = new javax.swing.JTextField();
+        txtDir = new javax.swing.JTextField();
+        txtCorreo = new javax.swing.JTextField();
+        btnGuardar = new javax.swing.JButton();
+        btnEdit = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
+        btnGenerarFactura = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        txtRuc = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaCliente = new javax.swing.JTable();
+        jLabel8 = new javax.swing.JLabel();
+        txtBuscar = new javax.swing.JTextField();
+        lblCliente = new javax.swing.JLabel();
+        lblBuscar = new javax.swing.JLabel();
+        btnRegresarAlMenu = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        btnPeso = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(153, 153, 255));
+
+        panelCont.setBackground(new java.awt.Color(223, 223, 236));
+        panelCont.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clicPanel(evt);
+            }
+        });
+        panelCont.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelCont.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 150, -1));
+        panelCont.add(txtTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 150, -1));
+        panelCont.add(txtDir, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 150, -1));
+        panelCont.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 150, -1));
+
+        btnGuardar.setBackground(new java.awt.Color(192, 255, 255));
+        btnGuardar.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        btnGuardar.setText("Guardar");
+        panelCont.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, 115, -1));
+
+        btnEdit.setBackground(new java.awt.Color(192, 255, 255));
+        btnEdit.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        btnEdit.setText("Editar");
+        panelCont.add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 150, 109, -1));
+
+        btnLimpiar.setBackground(new java.awt.Color(192, 255, 255));
+        btnLimpiar.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        btnLimpiar.setText("Limpiar");
+        panelCont.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, 115, -1));
+
+        btnGenerarFactura.setBackground(new java.awt.Color(192, 255, 255));
+        btnGenerarFactura.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        btnGenerarFactura.setText("Generar Factura");
+        panelCont.add(btnGenerarFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 260, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 180, 85));
+        jLabel1.setText("ENVIO");
+        panelCont.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel2.setText("RUC");
+        panelCont.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel3.setText("DESTINATARIO");
+        panelCont.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel4.setText("TELEFONO");
+        panelCont.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel5.setText("CORREO");
+        panelCont.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel6.setText("PESO");
+        panelCont.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, -1));
+        panelCont.add(txtRuc, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 150, -1));
+
+        tablaCliente.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tablaCliente.setEditingRow(0);
+        jScrollPane1.setViewportView(tablaCliente);
+
+        panelCont.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 764, 184));
+
+        jLabel8.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel8.setText("Buscar");
+        panelCont.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, -1, -1));
+        panelCont.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 189, -1));
+
+        lblCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Cliente/cliente.png"))); // NOI18N
+        panelCont.add(lblCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, 81, 79));
+
+        lblBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/buscar.png"))); // NOI18N
+        panelCont.add(lblBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 310, 48, 42));
+
+        btnRegresarAlMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/RegresoMenú.png"))); // NOI18N
+        panelCont.add(btnRegresarAlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
+        btnEliminar.setBackground(new java.awt.Color(192, 255, 255));
+        btnEliminar.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        btnEliminar.setText("Eliminar");
+        panelCont.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 210, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel7.setText("DIRECCION");
+        panelCont.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, -1, -1));
+        panelCont.add(btnPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 290, 150, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panelCont, javax.swing.GroupLayout.PREFERRED_SIZE, 985, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(panelCont, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void clicPanel(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clicPanel
+        this.txtRuc.setEditable(true);
+    }//GEN-LAST:event_clicPanel
 
     /**
      * @param args the command line arguments
@@ -60,24 +218,55 @@ public class EnvioForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EnvioForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClienteForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EnvioForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClienteForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EnvioForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClienteForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EnvioForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClienteForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EnvioForm().setVisible(true);
+                try {
+                    new ClienteForm().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(ClienteForm.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnEdit;
+    public javax.swing.JButton btnEliminar;
+    public javax.swing.JButton btnGenerarFactura;
+    public javax.swing.JButton btnGuardar;
+    public javax.swing.JButton btnLimpiar;
+    public javax.swing.JTextField btnPeso;
+    public javax.swing.JButton btnRegresarAlMenu;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblBuscar;
+    private javax.swing.JLabel lblCliente;
+    public javax.swing.JPanel panelCont;
+    public javax.swing.JTable tablaCliente;
+    public javax.swing.JTextField txtBuscar;
+    public javax.swing.JTextField txtCorreo;
+    public javax.swing.JTextField txtDir;
+    public javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtRuc;
+    public javax.swing.JTextField txtTel;
     // End of variables declaration//GEN-END:variables
 }
