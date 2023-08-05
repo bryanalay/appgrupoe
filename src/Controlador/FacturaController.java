@@ -4,10 +4,12 @@
  */
 package Controlador;
 
+import Vista.Factura.FacturaForm;
+
 /**
  *
  * @author LEKIAM
  */
 public class FacturaController {
-    
+    FacturaForm factura;
 }

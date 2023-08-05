@@ -27,17 +27,169 @@ public class FacturaForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblVehiculo = new javax.swing.JTable();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        lblCtaBancaria = new javax.swing.JLabel();
+        lblFechaPago = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        lblFechaEmision = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        lblFechaExpira = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        lblEstado = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        lblDireccion = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        lblCorreo = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        lblValorTotal = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        lblFactura = new javax.swing.JLabel();
+        lblIdRecibo = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        btnEnviar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(223, 223, 236));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel15.setText("Tipo:");
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 247, -1, -1));
+
+        jLabel16.setText("Banco:");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 247, -1, -1));
+
+        tblVehiculo.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Descripcion", "N. Envios", "Valor"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        tblVehiculo.setEnabled(false);
+        jScrollPane1.setViewportView(tblVehiculo);
+
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 380, 72));
+
+        jLabel19.setText("Direccion: ");
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, -1, -1));
+
+        jLabel20.setText("Contactanos:");
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel14.setText("Cuenta Bancaria:");
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 227, -1, -1));
+        jPanel2.add(lblCtaBancaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 227, 183, 14));
+        jPanel2.add(lblFechaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 164, 14));
+
+        jLabel24.setText("Fecha pago:");
+        jLabel24.setMaximumSize(new java.awt.Dimension(61, 14));
+        jLabel24.setMinimumSize(new java.awt.Dimension(61, 14));
+        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 207, 105, -1));
+
+        jLabel12.setText("Fecha emision:");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, -1, -1));
+        jPanel2.add(lblFechaEmision, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 109, 14));
+
+        jLabel25.setText("Fecha venciminiento:");
+        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 187, -1, 14));
+        jPanel2.add(lblFechaExpira, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 187, 101, 14));
+
+        jLabel13.setText("Estado:");
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 207, -1, -1));
+        jPanel2.add(lblEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 207, 101, 14));
+
+        jLabel10.setText("Direccion:");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 167, -1, -1));
+        jPanel2.add(lblDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 167, 101, 14));
+
+        jLabel8.setText("Correo:");
+        jLabel8.setMaximumSize(new java.awt.Dimension(38, 14));
+        jLabel8.setMinimumSize(new java.awt.Dimension(38, 14));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 38, -1));
+        jPanel2.add(lblCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 167, 152, 14));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setText("ID:");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 38, -1));
+
+        jLabel6.setText("Nombre:");
+        jLabel6.setMaximumSize(new java.awt.Dimension(45, 14));
+        jLabel6.setMinimumSize(new java.awt.Dimension(45, 14));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(404, 148, -1, -1));
+        jPanel2.add(lblValorTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 362, 87, 14));
+
+        jLabel17.setText("Total:");
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 390, -1, -1));
+
+        lblFactura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Login/camion.png"))); // NOI18N
+        jPanel2.add(lblFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 86, 63));
+
+        lblIdRecibo.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        lblIdRecibo.setText("Factura 001");
+        jPanel2.add(lblIdRecibo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 130, 20));
+
+        jLabel3.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 4, 73));
+        jLabel3.setText("CAMIONCITOS S.A");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 150, 30));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Factura/fondo.jpg"))); // NOI18N
+        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 570, 600, 40));
+
+        btnEnviar.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        btnEnviar.setText("Enviar");
+        jPanel2.add(btnEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 480, -1, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Factura/fondo.jpg"))); // NOI18N
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 570, 40));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Factura/fondo.jpg"))); // NOI18N
+        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 40));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 560));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -79,5 +231,38 @@ public class FacturaForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEnviar;
+    public javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel19;
+    public javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblCorreo;
+    private javax.swing.JLabel lblCtaBancaria;
+    private javax.swing.JLabel lblDireccion;
+    private javax.swing.JLabel lblEstado;
+    public javax.swing.JLabel lblFactura;
+    private javax.swing.JLabel lblFechaEmision;
+    private javax.swing.JLabel lblFechaExpira;
+    private javax.swing.JLabel lblFechaPago;
+    private javax.swing.JLabel lblIdRecibo;
+    private javax.swing.JLabel lblValorTotal;
+    private javax.swing.JTable tblVehiculo;
     // End of variables declaration//GEN-END:variables
 }

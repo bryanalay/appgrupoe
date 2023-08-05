@@ -4,10 +4,17 @@
  */
 package Controlador;
 
+import Vista.Secretaria.SecretariaForm;
+import Vista.Usuario.UsuarioForm;
+import java.awt.event.ActionListener;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
+
 /**
  *
  * @author LEKIAM
  */
 public class UsuarioController {
-    
+    UsuarioForm usuario;
+
 }
