@@ -5,7 +5,9 @@
 package Controlador;
 
 import Modelo.DAO.ClienteDAO;
+import Modelo.DAO.EnvioDAO;
 import Modelo.DTO.Cliente;
+import Modelo.DTO.Envio;
 import Vista.Cliente.ClienteForm;
 import Vista.Envio.EnvioForm;
 import Vista.Secretaria.SecretariaForm;
@@ -14,6 +16,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -59,6 +62,8 @@ public class EnvioController {
     
     public EnvioController() {
     }    
+    
+    private String state;
 
     public void Load() throws SQLException {
          
@@ -82,10 +87,10 @@ public class EnvioController {
             }
         });
         
-        clt.tablaCliente.addMouseListener(new MouseAdapter() {
+        clt.tbEnvio.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {                             
-                Cliente obj = getAllValueRow();
+                Envio obj = getAllValueRow();
                 llenarCampos(obj);
                 System.out.println("Clickeqdoadasd");             
             }
@@ -95,7 +100,7 @@ public class EnvioController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    crearCliente();
+                    crearEnvio();
                     cargar();
                     limpiarTodo();
                     System.out.println("Guardando cliente...");
@@ -113,14 +118,14 @@ public class EnvioController {
                     editar();
                     cargar();
                     limpiarTodo();
-                    clt.txtRuc.setEditable(true);
+                    clt.txtId.setEditable(true);
                 } catch (SQLException ex) {
                     System.out.println("No se pudo editar..");
                 }
             }
         });
         
-        clt.txtBuscar.addActionListener(new ActionListener() {
+        /*clt.txtBuscar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -129,25 +134,28 @@ public class EnvioController {
                     System.out.println("Error al buscar cliente");
                 }
             }
-        });
+        });*/
 
         cargar();
         limpiarTodo();
     }
     
     //guardae cliente
-    private void crearCliente() throws SQLException{
+    private void crearEnvio() throws SQLException{
         //usar crear de DAO
-        ClienteDAO cltdao = new ClienteDAO();
+        EnvioDAO envdao = new EnvioDAO();
         //traer cliente de form
-        Cliente cliente = new Cliente();
-        cliente.setRuc(clt.txtRuc.getText());
-        cliente.setNombre(clt.txtNombre.getText());
-        cliente.setTelefono(clt.txtTel.getText());
-        cliente.setCorreo(clt.txtCorreo.getText());
-        cliente.setDireccion(clt.txtDir.getText());
+        Envio env = new Envio();
+        env.setFecha(LocalDate.now().toString());
+        env.setRucCliente(clt.txtRuc.getText());        
+        env.setDetalles(clt.txtDetalles.getText());
+        env.setPeso(clt.txtPeso.getText());
+        env.setEnvioInterprov(clt.checkInter.isSelected()?"Si":"No");
+        env.setDireccion(clt.txtDir.getText());
+        env.setCiDestinatario(clt.txtCIdest.getText());        
+        env.setTelefono(clt.txtTel.getText());    
         
-        boolean res = cltdao.crearCliente(cliente);
+        boolean res = envdao.crearEnvio(env);
         if(res){
             JOptionPane.showMessageDialog(null, "Cliente guardado!!");
         }else{
@@ -159,28 +167,38 @@ public class EnvioController {
     
     //limpiar inputs
     private void limpiarTodo(){
+        clt.txtId.setText("");
         clt.txtRuc.setText("");
-        clt.txtNombre.setText("");
         clt.txtTel.setText("");
-        clt.txtCorreo.setText("");
+        clt.txtPeso.setText("");
+        clt.txtDetalles.setText("");
         clt.txtDir.setText("");
     }
     
     //llenar todo
-    private void llenarCampos(Cliente ro){
-        clt.txtRuc.setText(ro.getRuc());
-        clt.txtNombre.setText(ro.getNombre());
+    private void llenarCampos(Envio ro){
+        clt.txtId.setText(ro.getId());
+        clt.txtRuc.setText(ro.getRucCliente());
         clt.txtTel.setText(ro.getTelefono());
-        clt.txtCorreo.setText(ro.getCorreo());
         clt.txtDir.setText(ro.getDireccion());
+        clt.txtDetalles.setText(ro.getDetalles());
+        clt.txtPeso.setText(ro.getPeso());
+        clt.txtCIdest.setText(ro.getCiDestinatario());
+        String interprov = ro.getEnvioInterprov();
+
+        if ("Si".equals(interprov)) {
+            clt.checkInter.setSelected(true);
+        } else if ("No".equals(interprov)) {
+            clt.checkInter.setSelected(false);
+        }
     }
     
     //devuelve row seleccionado
     private int getRowSelected(){
         //la tabla se llama
         //clt.tablaCliente
-        clt.txtRuc.setEditable(false);
-        int selectedRow = clt.tablaCliente.getSelectedRow();
+        clt.txtId.setEditable(false);
+        int selectedRow = clt.tbEnvio.getSelectedRow();
         if (selectedRow >-1) {
             //si hay fila seleccionada
             return selectedRow;
@@ -194,7 +212,7 @@ public class EnvioController {
         if(rowselected == -1){
             JOptionPane.showMessageDialog(null, "No ha seleeccioonado nada..");
         }else{
-            Object value = clt.tablaCliente.getValueAt(rowselected, 0);
+            Object value = clt.tbEnvio.getValueAt(rowselected, 0);
 
             if (value == null) {
                 return null;
@@ -207,22 +225,32 @@ public class EnvioController {
     }
     
     //get All values de row
-    private Cliente getAllValueRow(){
+    private Envio getAllValueRow(){
         int rowSelected = getRowSelected();
-        Cliente cli = new Cliente();
+        Envio cli = new Envio();
         
         if(rowSelected > -1){
-            Object ruc = clt.tablaCliente.getValueAt(rowSelected, 0);
-            Object nombre = clt.tablaCliente.getValueAt(rowSelected, 1);
-            Object tel = clt.tablaCliente.getValueAt(rowSelected, 2);
-            Object corr = clt.tablaCliente.getValueAt(rowSelected, 3);
-            Object dir = clt.tablaCliente.getValueAt(rowSelected, 4);
+            Object id = clt.tbEnvio.getValueAt(rowSelected,0);
+            Object ruc = clt.tbEnvio.getValueAt(rowSelected, 2);
+            Object detalles = clt.tbEnvio.getValueAt(rowSelected, 3);
+            Object peso = clt.tbEnvio.getValueAt(rowSelected, 4);
+            Object dir = clt.tbEnvio.getValueAt(rowSelected, 7);
+            Object cidest = clt.tbEnvio.getValueAt(rowSelected, 8);
+            Object telf = clt.tbEnvio.getValueAt(rowSelected, 9);
+            Object stst = clt.tbEnvio.getValueAt(rowSelected, 10);
+            Object inter = clt.tbEnvio.getValueAt(rowSelected, 5);
             
-            cli.setRuc(ruc.toString());
-            cli.setNombre(nombre.toString());
-            cli.setTelefono(tel.toString());
-            cli.setCorreo(corr.toString());
+            cli.setId(id.toString());
+            cli.setRucCliente(ruc.toString());
+            cli.setPeso(peso.toString());
+            cli.setDetalles(detalles.toString());
+            state = stst.toString();
+            cli.setCiDestinatario(cidest.toString());
+            cli.setTelefono(telf.toString());
+            //cli.setCorreo(corr.toString());
             cli.setDireccion(dir.toString());
+            cli.setEnvioInterprov(inter.toString());
+            System.out.println("Inter string: "+inter.toString());
             
             return cli;
         }
@@ -232,7 +260,7 @@ public class EnvioController {
     //eliminar empleado
     private void eliminar(String ruc) throws SQLException{
         
-        boolean elim = new ClienteDAO().eliminarCliente(ruc);
+        boolean elim = new EnvioDAO().eliminarEnvio(ruc);
         if(elim){
             cargar();
             JOptionPane.showMessageDialog(null, "Cliente eliminado Correctamente...");
@@ -243,14 +271,25 @@ public class EnvioController {
     
     //modificar empleado
     private void editar() throws SQLException{
-        Cliente cliente = new Cliente();
-        cliente.setRuc(clt.txtRuc.getText());
-        cliente.setNombre(clt.txtNombre.getText());
-        cliente.setTelefono(clt.txtTel.getText());
-        cliente.setCorreo(clt.txtCorreo.getText());
-        cliente.setDireccion(clt.txtDir.getText());
-        ClienteDAO cltdao = new ClienteDAO();
-        boolean res = cltdao.editarCliente(cliente);
+        
+//        cstmt.setString(1, env.getId());
+//            cstmt.setString(2, env.getDetalles());
+//            cstmt.setString(3, env.getPeso());
+//            cstmt.setString(4, env.getEnvioInterprov());
+//            cstmt.setString(5, env.getDireccion());
+//            cstmt.setString(6, env.getTelefono());
+//            cstmt.setString(7, env.getEstado());
+        
+        Envio env = new Envio();
+        env.setId(clt.txtId.getText());
+        env.setDetalles(clt.txtDetalles.getText());
+        env.setPeso(clt.txtPeso.getText());
+        env.setEnvioInterprov(clt.checkInter.isSelected()?"Si":"No");        
+        env.setDireccion(clt.txtDir.getText());
+        env.setTelefono(clt.txtTel.getText());
+        env.setEstado(state);
+        EnvioDAO cltdao = new EnvioDAO();
+        boolean res = cltdao.editarEnvio(env);
         if(res){
             JOptionPane.showMessageDialog(null, "Cliente editado!!");
         }else{
@@ -260,18 +299,21 @@ public class EnvioController {
     
     //cargar empleado(os)
     private void cargar() throws SQLException{
-        List<Cliente> data = new ClienteDAO().getClientes();
-        String[] cols = {"RUC","NOMBRE","TELEFONO","CORREO","DIRECCION"};
+        List<Envio> data = new EnvioDAO().getEnvios();
+        String[] cols = {"ID","FECHA","RUC CLIENTE","DETALLES","PESO","ENVIO INTERPROVINCIAL",
+        "COSTO","DIRECCION DESTINATARIO","CI DESTINATARIO", "TELEFONO DESTINATARIO","ESTADO","FECHA FINALIZACION"};
         
         DefaultTableModel model = new DefaultTableModel(cols,0);
-        for (Cliente cola : data) {
-            Object[] dt = {cola.getRuc(),cola.getNombre(),cola.getTelefono(),cola.getCorreo(),cola.getDireccion()};
+        for (Envio cola : data) {
+            Object[] dt = {cola.getId(),cola.getFecha(),cola.getRucCliente(),cola.getDetalles(),
+                cola.getPeso(),cola.getEnvioInterprov(),cola.getCosto(),cola.getDireccion(),
+                cola.getCiDestinatario(),cola.getTelefono(),cola.getEstado(),cola.getFechaEntrega()};
             
             model.addRow(dt);
         }
-        clt.tablaCliente.setModel(model);
+        clt.tbEnvio.setModel(model);
     }
-    
+    /*
     // Método para buscar un cliente por su nombre o RUC
     private void buscarCliente(String searchTerm) throws SQLException {
         List<Cliente> resultados = new ArrayList<>();
@@ -305,6 +347,6 @@ public class EnvioController {
             //JOptionPane.showMessageDialog(null, "Clientes encontrados: " + resultados.size());
         }
 
-        clt.tablaCliente.setModel(model);
-    }
+        clt.tbEnvio.setModel(model);
+    }*/
 }
