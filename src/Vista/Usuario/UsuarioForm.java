@@ -81,6 +81,7 @@ public class UsuarioForm extends javax.swing.JFrame {
         btnRegresarMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(223, 223, 236));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -127,8 +128,8 @@ public class UsuarioForm extends javax.swing.JFrame {
 
         lblUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Usuario/usuario.png"))); // NOI18N
         jPanel1.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 120, 120));
-        jPanel1.add(lblCi, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 70, 50));
-        jPanel1.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 70, 30));
+        jPanel1.add(lblCi, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 70, 30));
+        jPanel1.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 70, 20));
         jPanel1.add(lblApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 80, 40));
         jPanel1.add(lblCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 100, 40));
         jPanel1.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 100, 80, 40));

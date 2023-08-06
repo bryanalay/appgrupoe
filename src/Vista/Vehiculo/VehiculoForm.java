@@ -76,6 +76,7 @@ public class VehiculoForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 255));
         setForeground(new java.awt.Color(153, 153, 255));
+        setUndecorated(true);
 
         panelContent.setBackground(new java.awt.Color(223, 223, 236));
         panelContent.addMouseListener(new java.awt.event.MouseAdapter() {

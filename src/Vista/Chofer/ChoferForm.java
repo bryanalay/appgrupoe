@@ -84,6 +84,7 @@ public class ChoferForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 255));
+        setUndecorated(true);
 
         panelCont.setBackground(new java.awt.Color(223, 223, 236));
         panelCont.addMouseListener(new java.awt.event.MouseAdapter() {
