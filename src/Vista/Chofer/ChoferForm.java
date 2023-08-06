@@ -11,6 +11,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -39,6 +41,17 @@ public class ChoferForm extends javax.swing.JFrame {
         lblBuscar.setIcon(tmn2);
         lblChofer.setIcon(tmn);
         this.repaint();
+//            txtCi.addKeyListener(new java.awt.event.KeyAdapter() {
+//        public void keyTyped(java.awt.event.KeyEvent evt) {
+//            txtCiKeyTyped(evt);
+//        }
+//    });
+//    txtCelu.addKeyListener(new java.awt.event.KeyAdapter() {
+//        public void keyTyped(java.awt.event.KeyEvent evt) {
+//            txtCiKeyTyped(evt);
+//        }
+//    });
+
     }
 
     /**
@@ -84,6 +97,7 @@ public class ChoferForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 255));
+        setUndecorated(true);
 
         panelCont.setBackground(new java.awt.Color(223, 223, 236));
         panelCont.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -145,9 +159,31 @@ public class ChoferForm extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel11.setText("Disponibilidad");
         panelCont.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 296, -1, -1));
+
+        txtCi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCiActionPerformed(evt);
+            }
+        });
+        txtCi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCiKeyTyped(evt);
+            }
+        });
         panelCont.add(txtCi, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 111, 109, -1));
         panelCont.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 152, 109, -1));
         panelCont.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 193, 109, -1));
+
+        txtCelu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCeluActionPerformed(evt);
+            }
+        });
+        txtCelu.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCeluKeyTyped(evt);
+            }
+        });
         panelCont.add(txtCelu, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 241, 109, -1));
         panelCont.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 178, -1));
         panelCont.add(txtDir, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 178, -1));
@@ -216,6 +252,44 @@ public class ChoferForm extends javax.swing.JFrame {
     private void clickPanel(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clickPanel
         this.txtCi.setEditable(true);
     }//GEN-LAST:event_clickPanel
+
+    private void txtCiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCiActionPerformed
+        // TODO add your handling code here:
+        //validarNumerosYLetras(txtCi);
+    }//GEN-LAST:event_txtCiActionPerformed
+
+    private void txtCeluActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCeluActionPerformed
+        // TODO add your handling code here:
+       // validarNumerosYLetras(txtCelu);
+    }//GEN-LAST:event_txtCeluActionPerformed
+
+    private void txtCiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCiKeyTyped
+        // TODO add your handling code here:
+            String currentText = txtCi.getText();
+
+    // Verificar si el carácter presionado es un número y la longitud no excede 10
+    if (!Character.isDigit(evt.getKeyChar()) || currentText.length()== 10) {
+        // Consumir el evento, evitando que el carácter se muestre en el campo de texto
+        evt.consume();
+
+        // Mostrar mensaje de error
+        JOptionPane.showMessageDialog(null, "DEBEN SER SOLO NUMEROS Y HASTA 10 DIGITOS", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_txtCiKeyTyped
+
+    private void txtCeluKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCeluKeyTyped
+        // TODO add your handling code here:
+        String currentText = txtCelu.getText();
+
+    // Verificar si el carácter presionado es un número y la longitud no excede 10
+    if (!Character.isDigit(evt.getKeyChar()) || currentText.length()== 10) {
+        // Consumir el evento, evitando que el carácter se muestre en el campo de texto
+        evt.consume();
+
+        // Mostrar mensaje de error
+        JOptionPane.showMessageDialog(null, "DEBEN SER SOLO NUMEROS Y HASTA 10 DIGITOS", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_txtCeluKeyTyped
 
     /**
      * @param args the command line arguments
@@ -289,4 +363,6 @@ public class ChoferForm extends javax.swing.JFrame {
     public javax.swing.JTextField txtEdad;
     public javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
+
+    
 }

@@ -65,6 +65,7 @@ public class ListasForm extends javax.swing.JFrame {
         btnRegresarAlMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(223, 223, 236));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

@@ -8,6 +8,7 @@ import Vista.Cliente.*;
 import Controlador.ClienteController;
 import Controlador.EnvioController;
 import Controlador.UsuarioController;
+import Vista.Factura.FacturaForm;
 import java.awt.Image;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -90,6 +91,7 @@ public class EnvioForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 255));
+        setUndecorated(true);
 
         panelCont.setBackground(new java.awt.Color(223, 223, 236));
         panelCont.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -121,6 +123,11 @@ public class EnvioForm extends javax.swing.JFrame {
         btnGenerarFactura.setBackground(new java.awt.Color(192, 255, 255));
         btnGenerarFactura.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
         btnGenerarFactura.setText("Generar Factura");
+        btnGenerarFactura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarFacturaActionPerformed(evt);
+            }
+        });
         panelCont.add(btnGenerarFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 260, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
@@ -217,6 +224,13 @@ public class EnvioForm extends javax.swing.JFrame {
     private void clicPanel(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clicPanel
         this.txtId.setEditable(true);
     }//GEN-LAST:event_clicPanel
+
+    private void btnGenerarFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarFacturaActionPerformed
+        // TODO add your handling code here:
+            this.dispose();
+            FacturaForm facturaForm = new FacturaForm();
+            facturaForm.setVisible(true);
+    }//GEN-LAST:event_btnGenerarFacturaActionPerformed
 
     /**
      * @param args the command line arguments
