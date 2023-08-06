@@ -49,7 +49,7 @@ public class ListasForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbEstado = new javax.swing.JComboBox<>();
         lblLista = new javax.swing.JLabel();
         btnGuardar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -70,8 +70,9 @@ public class ListasForm extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(223, 223, 236));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "En espera", "Viajando", "Entregado" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 90, 30));
+        cmbEstado.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cmbEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "En espera", "Viajando", "Entregado" }));
+        jPanel1.add(cmbEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 90, 30));
         jPanel1.add(lblLista, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 90, 70));
 
         btnGuardar.setBackground(new java.awt.Color(192, 255, 255));
@@ -189,7 +190,7 @@ public class ListasForm extends javax.swing.JFrame {
     public javax.swing.JButton btnGuardar;
     public javax.swing.JButton btnLimpiar;
     public javax.swing.JButton btnRegresarAlMenu;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cmbEstado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel8;

@@ -154,7 +154,7 @@ public class ChoferForm extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel10.setText("Contraseña");
         jLabel10.setEnabled(false);
-        panelCont.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 237, -1, -1));
+        panelCont.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel11.setText("Disponibilidad");
