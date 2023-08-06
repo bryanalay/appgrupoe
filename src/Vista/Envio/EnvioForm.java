@@ -6,6 +6,8 @@ package Vista.Envio;
 
 import Vista.Cliente.*;
 import Controlador.ClienteController;
+import Controlador.EnvioController;
+import Controlador.UsuarioController;
 import java.awt.Image;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -25,6 +27,8 @@ public class EnvioForm extends javax.swing.JFrame {
      */
     public EnvioForm() throws SQLException {
         initComponents();
+        EnvioController env = new EnvioController();
+        env.EnvioController(this);
         ClienteController envio = new ClienteController();
 //        envio.ClienteController(this);
 //        envio.setCform(this);
@@ -32,7 +36,7 @@ public class EnvioForm extends javax.swing.JFrame {
         //icono app
         setIconImage(new ImageIcon (getClass().getResource("/Vista/Login/Camion.png")).getImage());
         //Tamaño de las imagenes
-        ImageIcon img=new ImageIcon(getClass().getResource("/Vista/Cliente/cliente.png"));
+        ImageIcon img=new ImageIcon(getClass().getResource("/Vista/Envio/envio.png"));
         ImageIcon img2=new ImageIcon(getClass().getResource("/Images/buscar.png"));
         Icon tmn=new ImageIcon(img.getImage().getScaledInstance(lblCliente.getWidth(), lblCliente.getHeight(), Image.SCALE_DEFAULT));
         Icon tmn2=new ImageIcon(img2.getImage().getScaledInstance(lblBuscar.getWidth(), lblBuscar.getHeight(), Image.SCALE_DEFAULT));

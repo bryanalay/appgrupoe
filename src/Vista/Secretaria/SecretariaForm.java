@@ -5,6 +5,7 @@
 package Vista.Secretaria;
 
 import Controlador.SecretariaController;
+import Modelo.DTO.Empleado;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,7 +16,7 @@ import javax.swing.ImageIcon;
  * @author Almi-
  */
 public class SecretariaForm extends javax.swing.JFrame {
-
+    public Empleado emp;
     /**
      * Creates new form SecretariaForm
      */

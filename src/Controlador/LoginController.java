@@ -45,15 +45,15 @@ public class LoginController {
             //llamo secretaria form y le paso el empleado
             vista.setVisible(false);
             System.out.println("Logueado..!!");
-            abirMenuSecretaria(emp.getCi(),emp.getNombre());
+            abirMenuSecretaria(emp);
         }
     }
     
-    private void abirMenuSecretaria(String ci,String nombre) throws SQLException{
+    private void abirMenuSecretaria(Empleado emp) throws SQLException{
         SecretariaForm secre = new SecretariaForm();
         //secre.lblNombre.setText(nombre);
         //secre.lblCi.setText(ci);
-        
+        secre.emp = emp;
         secre.setVisible(true);
     }
     

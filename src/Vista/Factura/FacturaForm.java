@@ -38,7 +38,6 @@ public class FacturaForm extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         lblCtaBancaria = new javax.swing.JLabel();
         lblFechaPago = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         lblFechaEmision = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
@@ -70,11 +69,13 @@ public class FacturaForm extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setText("Tipo:");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 247, -1, -1));
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, -1));
 
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel16.setText("Banco:");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 247, -1, -1));
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, -1, -1));
 
         tblVehiculo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -95,57 +96,59 @@ public class FacturaForm extends javax.swing.JFrame {
         tblVehiculo.setEnabled(false);
         jScrollPane1.setViewportView(tblVehiculo);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 380, 72));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 430, 72));
 
         jLabel19.setText("Direccion: ");
-        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, -1, -1));
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, -1, -1));
 
         jLabel20.setText("Contactanos:");
-        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, -1, -1));
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel14.setText("Cuenta Bancaria:");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 227, -1, -1));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, -1));
         jPanel2.add(lblCtaBancaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 227, 183, 14));
         jPanel2.add(lblFechaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 164, 14));
 
-        jLabel24.setText("Fecha pago:");
-        jLabel24.setMaximumSize(new java.awt.Dimension(61, 14));
-        jLabel24.setMinimumSize(new java.awt.Dimension(61, 14));
-        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 207, 105, -1));
-
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel12.setText("Fecha emision:");
         jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, -1, -1));
         jPanel2.add(lblFechaEmision, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 109, 14));
 
+        jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel25.setText("Fecha venciminiento:");
-        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 187, -1, 14));
+        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, -1, 14));
         jPanel2.add(lblFechaExpira, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 187, 101, 14));
 
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel13.setText("Estado:");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 207, -1, -1));
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, -1, -1));
         jPanel2.add(lblEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 207, 101, 14));
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setText("Direccion:");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 167, -1, -1));
         jPanel2.add(lblDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 167, 101, 14));
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setText("Correo:");
         jLabel8.setMaximumSize(new java.awt.Dimension(38, 14));
         jLabel8.setMinimumSize(new java.awt.Dimension(38, 14));
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 38, -1));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 60, -1));
         jPanel2.add(lblCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 167, 152, 14));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("ID:");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 38, -1));
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("Nombre:");
         jLabel6.setMaximumSize(new java.awt.Dimension(45, 14));
         jLabel6.setMinimumSize(new java.awt.Dimension(45, 14));
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(404, 148, -1, -1));
         jPanel2.add(lblValorTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 362, 87, 14));
 
+        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel17.setText("Total:");
         jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 390, -1, -1));
 
@@ -243,7 +246,6 @@ public class FacturaForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     public javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

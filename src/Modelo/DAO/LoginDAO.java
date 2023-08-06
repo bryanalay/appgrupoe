@@ -15,7 +15,7 @@ import utils.Conexion;
  */
 public class LoginDAO {
      public Empleado login (String CI,String password) throws SQLException{
-        String sp = "{CALL LoginEmpleado(?,?)}";
+        String sp = "{CALL LoginEmpleadob(?,?)}";
         
         try {
             Connection conn = Conexion.getConexion();
@@ -29,7 +29,10 @@ public class LoginDAO {
                 emp.setCi(result.getString("CI"));
                 emp.setNombre(result.getString("Nombre"));
                 emp.setApellido(result.getString("Apellido")); 
-                //emp.setCelular(result.getString("Celular"));
+                emp.setCelular(result.getString("Celular"));
+                emp.setFecha(result.getString("Fecha"));
+                emp.setCorreo(result.getString("Correo"));
+                emp.setDireccion(result.getString("Direccion"));
                 //String cargo = result.getString("CARGO");
                 return emp;              
             }

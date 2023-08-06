@@ -88,22 +88,22 @@ public class UsuarioForm extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(249, 154, 49));
         jLabel1.setText("Cedula:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 70, 30));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 70, 30));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(249, 154, 49));
         jLabel2.setText("Nombre:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(249, 154, 49));
         jLabel3.setText("Apellido:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(249, 154, 49));
         jLabel4.setText("Celular:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(249, 154, 49));
@@ -112,8 +112,8 @@ public class UsuarioForm extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(252, 13, 13));
-        jLabel6.setText("Datos Personales");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, -1));
+        jLabel6.setText("DATOS PERSONALES");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(249, 154, 49));
@@ -126,11 +126,11 @@ public class UsuarioForm extends javax.swing.JFrame {
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, -1, -1));
 
         lblUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Usuario/usuario.png"))); // NOI18N
-        jPanel1.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 120, 120));
-        jPanel1.add(lblCi, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, 70, 40));
+        jPanel1.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 120, 120));
+        jPanel1.add(lblCi, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 70, 50));
         jPanel1.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 70, 30));
-        jPanel1.add(lblApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 80, 40));
-        jPanel1.add(lblCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 100, 40));
+        jPanel1.add(lblApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 80, 40));
+        jPanel1.add(lblCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 100, 40));
         jPanel1.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 100, 80, 40));
         jPanel1.add(lblCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, 90, 30));
         jPanel1.add(lblDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 100, 40));
