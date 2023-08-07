@@ -84,7 +84,7 @@ public class PedidoForm extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnAsignar.setText("Asignar Chofer");
-        jPanel1.add(btnAsignar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
+        jPanel1.add(btnAsignar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, -1, -1));
 
         btnFinal.setText("Finalizar Pedido");
         jPanel1.add(btnFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, -1, -1));
