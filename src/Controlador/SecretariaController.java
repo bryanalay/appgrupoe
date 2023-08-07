@@ -6,6 +6,7 @@ import Vista.Chofer.ChoferForm;
 import Vista.Cliente.ClienteForm;
 import Vista.Envio.EnvioForm;
 import Vista.Factura.FacturaForm;
+import Vista.ListadoFacturas.ListadoForm;
 import Vista.Listas.ListasForm;
 import Vista.Login.LoginForm;
 import java.awt.event.ActionEvent;
@@ -33,7 +34,7 @@ public class SecretariaController {
         FacturaForm fac=new FacturaForm();
         LoginForm loginForm = new LoginForm(); 
         EnvioForm env = new EnvioForm();
-        ListasForm lst = new ListasForm();
+        ListadoForm lst = new ListadoForm();
         
 //        UsuarioForm UsuarioF = new UsuarioForm();
         sec.btnChofer.addActionListener(new ActionListener() {

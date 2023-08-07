@@ -25,18 +25,18 @@ public class ListasForm extends javax.swing.JFrame {
      */
     public ListasForm() throws SQLException {
         initComponents();
-        ListasController lista = new ListasController();
-        lista.ListasController(this);
-        //icono app
-        setIconImage(new ImageIcon (getClass().getResource("/Vista/Login/Camion.png")).getImage());
-        //Tamaño de las imagenes
-        ImageIcon img=new ImageIcon(getClass().getResource("/Vista/Listas/lista.png"));
-        ImageIcon img2=new ImageIcon(getClass().getResource("/Images/buscar.png"));
-        Icon tmn=new ImageIcon(img.getImage().getScaledInstance(lblLista.getWidth(), lblLista.getHeight(), Image.SCALE_DEFAULT));
-        Icon tmn2=new ImageIcon(img2.getImage().getScaledInstance(lblBuscar.getWidth(), lblBuscar.getHeight(), Image.SCALE_DEFAULT));
-        lblLista.setIcon(tmn);
-        lblBuscar.setIcon(tmn2);
-        this.repaint();
+//        ListasController lista = new ListasController();
+//        lista.ListasController(this);
+//        //icono app
+//        setIconImage(new ImageIcon (getClass().getResource("/Vista/Login/Camion.png")).getImage());
+//        //Tamaño de las imagenes
+//        ImageIcon img=new ImageIcon(getClass().getResource("/Vista/Listas/lista.png"));
+//        ImageIcon img2=new ImageIcon(getClass().getResource("/Images/buscar.png"));
+//        Icon tmn=new ImageIcon(img.getImage().getScaledInstance(lblLista.getWidth(), lblLista.getHeight(), Image.SCALE_DEFAULT));
+//        Icon tmn2=new ImageIcon(img2.getImage().getScaledInstance(lblBuscar.getWidth(), lblBuscar.getHeight(), Image.SCALE_DEFAULT));
+//        lblLista.setIcon(tmn);
+//        lblBuscar.setIcon(tmn2);
+//        this.repaint();
     }
 
     /**

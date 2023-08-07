@@ -6,6 +6,7 @@
 package Controlador;
 
 import Vista.Listas.ListasForm;
+import Vista.ListadoFacturas.ListadoForm;
 import Vista.Secretaria.SecretariaForm;
 import Vista.Usuario.UsuarioForm;
 import java.awt.event.ActionEvent;
@@ -19,8 +20,8 @@ import java.util.logging.Logger;
  * @author ERICK
  */
 public class ListasController {
-    ListasForm listas;
-    public void ListasController(ListasForm cform) throws SQLException{
+    ListadoForm listas;
+    public void ListasController(ListadoForm cform) throws SQLException{
         this.listas = cform;
             
             cform.btnRegresarAlMenu.addActionListener(new ActionListener() {

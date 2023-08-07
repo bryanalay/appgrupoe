@@ -30,7 +30,8 @@ public class EnvioForm extends javax.swing.JFrame {
         initComponents();
         EnvioController env = new EnvioController();
         env.EnvioController(this);
-        ClienteController envio = new ClienteController();
+        env.Load();
+        //ClienteController envio = new ClienteController();
 //        envio.ClienteController(this);
 //        envio.setCform(this);
 //        envio.Load();
@@ -58,10 +59,10 @@ public class EnvioForm extends javax.swing.JFrame {
     private void initComponents() {
 
         panelCont = new javax.swing.JPanel();
-        txtNombre = new javax.swing.JTextField();
+        txtRuc = new javax.swing.JTextField();
         txtTel = new javax.swing.JTextField();
         txtDir = new javax.swing.JTextField();
-        txtCorreo = new javax.swing.JTextField();
+        txtDetalles = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
         btnEdit = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
@@ -72,9 +73,9 @@ public class EnvioForm extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txtRuc = new javax.swing.JTextField();
+        txtId = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablaCliente = new javax.swing.JTable();
+        tbEnvio = new javax.swing.JTable();
         jLabel8 = new javax.swing.JLabel();
         txtBuscar = new javax.swing.JTextField();
         lblCliente = new javax.swing.JLabel();
@@ -82,7 +83,11 @@ public class EnvioForm extends javax.swing.JFrame {
         btnRegresarAlMenu = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        btnPeso = new javax.swing.JTextField();
+        txtPeso = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        checkInter = new javax.swing.JCheckBox();
+        jLabel10 = new javax.swing.JLabel();
+        txtCIdest = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 255));
@@ -95,10 +100,10 @@ public class EnvioForm extends javax.swing.JFrame {
             }
         });
         panelCont.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        panelCont.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 150, -1));
-        panelCont.add(txtTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 150, -1));
-        panelCont.add(txtDir, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 150, -1));
-        panelCont.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 150, -1));
+        panelCont.add(txtRuc, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 150, -1));
+        panelCont.add(txtTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 150, -1));
+        panelCont.add(txtDir, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 150, -1));
+        panelCont.add(txtDetalles, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 150, -1));
 
         btnGuardar.setBackground(new java.awt.Color(192, 255, 255));
         btnGuardar.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
@@ -131,27 +136,27 @@ public class EnvioForm extends javax.swing.JFrame {
         panelCont.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel2.setText("RUC");
-        panelCont.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, -1, -1));
+        jLabel2.setText("ID");
+        panelCont.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel3.setText("DESTINATARIO");
-        panelCont.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, -1, -1));
+        jLabel3.setText("RUC");
+        panelCont.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel4.setText("TELEFONO");
-        panelCont.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, -1, -1));
+        panelCont.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel5.setText("CORREO");
-        panelCont.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, -1, -1));
+        jLabel5.setText("DETALLES");
+        panelCont.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel6.setText("PESO");
-        panelCont.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, -1));
-        panelCont.add(txtRuc, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 150, -1));
+        panelCont.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
+        panelCont.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 150, -1));
 
-        tablaCliente.setModel(new javax.swing.table.DefaultTableModel(
+        tbEnvio.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -162,8 +167,8 @@ public class EnvioForm extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tablaCliente.setEditingRow(0);
-        jScrollPane1.setViewportView(tablaCliente);
+        tbEnvio.setEditingRow(0);
+        jScrollPane1.setViewportView(tbEnvio);
 
         panelCont.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 764, 184));
 
@@ -188,8 +193,16 @@ public class EnvioForm extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel7.setText("DIRECCION");
-        panelCont.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, -1, -1));
-        panelCont.add(btnPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 290, 150, -1));
+        panelCont.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, -1, -1));
+        panelCont.add(txtPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 150, -1));
+
+        jLabel9.setText("INTERPROV:");
+        panelCont.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, -1, -1));
+        panelCont.add(checkInter, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 20, -1));
+
+        jLabel10.setText("CI DESTITANTARIO:");
+        panelCont.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, -1, -1));
+        panelCont.add(txtCIdest, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 110, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -209,7 +222,7 @@ public class EnvioForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void clicPanel(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clicPanel
-        this.txtRuc.setEditable(true);
+        this.txtId.setEditable(true);
     }//GEN-LAST:event_clicPanel
 
     private void btnGenerarFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarFacturaActionPerformed
@@ -265,9 +278,10 @@ public class EnvioForm extends javax.swing.JFrame {
     public javax.swing.JButton btnGenerarFactura;
     public javax.swing.JButton btnGuardar;
     public javax.swing.JButton btnLimpiar;
-    public javax.swing.JTextField btnPeso;
     public javax.swing.JButton btnRegresarAlMenu;
+    public javax.swing.JCheckBox checkInter;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -275,15 +289,18 @@ public class EnvioForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblBuscar;
     private javax.swing.JLabel lblCliente;
     public javax.swing.JPanel panelCont;
-    public javax.swing.JTable tablaCliente;
+    public javax.swing.JTable tbEnvio;
     public javax.swing.JTextField txtBuscar;
-    public javax.swing.JTextField txtCorreo;
+    public javax.swing.JTextField txtCIdest;
+    public javax.swing.JTextField txtDetalles;
     public javax.swing.JTextField txtDir;
-    public javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtId;
+    public javax.swing.JTextField txtPeso;
     public javax.swing.JTextField txtRuc;
     public javax.swing.JTextField txtTel;
     // End of variables declaration//GEN-END:variables
