@@ -31,6 +31,7 @@ public class EnvioForm extends javax.swing.JFrame {
         EnvioController env = new EnvioController();
         env.EnvioController(this);
         env.Load();
+        btnGenerarFactura.setVisible(false);
         //ClienteController envio = new ClienteController();
 //        envio.ClienteController(this);
 //        envio.setCform(this);
@@ -124,12 +125,13 @@ public class EnvioForm extends javax.swing.JFrame {
         btnGenerarFactura.setBackground(new java.awt.Color(192, 255, 255));
         btnGenerarFactura.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
         btnGenerarFactura.setText("Generar Factura");
+        btnGenerarFactura.setEnabled(false);
         btnGenerarFactura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGenerarFacturaActionPerformed(evt);
             }
         });
-        panelCont.add(btnGenerarFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, 180, -1));
+        panelCont.add(btnGenerarFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 500, 30, -1));
 
         jLabel1.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 180, 85));
@@ -205,8 +207,10 @@ public class EnvioForm extends javax.swing.JFrame {
         panelCont.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, -1, -1));
         panelCont.add(txtCIdest, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 110, -1));
 
+        btnAbrirPedido.setBackground(new java.awt.Color(192, 255, 255));
+        btnAbrirPedido.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
         btnAbrirPedido.setText("Abrir Pedido");
-        panelCont.add(btnAbrirPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 260, -1, -1));
+        panelCont.add(btnAbrirPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 260, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
