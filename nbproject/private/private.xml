@@ -2,6 +2,21 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+<<<<<<< HEAD
+            <file>file:/C:/Users/Almi-/OneDrive/Escritorio/finalproj/appgrupoe/src/Controlador/PedidoController.java</file>
+            <file>file:/C:/Users/Almi-/OneDrive/Escritorio/finalproj/appgrupoe/src/Modelo/DAO/EnvioDAO.java</file>
+            <file>file:/C:/Users/Almi-/OneDrive/Escritorio/finalproj/appgrupoe/src/Modelo/DAO/ChoferDAO.java</file>
+            <file>file:/C:/Users/Almi-/OneDrive/Escritorio/finalproj/appgrupoe/src/Controlador/EnvioController.java</file>
+            <file>file:/C:/Users/Almi-/OneDrive/Escritorio/finalproj/appgrupoe/src/Vista/Envio/PedidoForm.java</file>
+            <file>file:/C:/Users/Almi-/OneDrive/Escritorio/finalproj/appgrupoe/src/Vista/Envio/EnvioForm.java</file>
+=======
+            <file>file:/C:/Users/USER/Desktop/Software/7MO%20SEMESTRE/CONSTRUCCION%20DE%20SOFTWARE/JAVA%20-%20PROYECTO/RESPALDO/AVANCES/appgrupoe/src/Vista/Envio/EnvioForm.java</file>
+>>>>>>> bc69fb4ff5e4b59efe687af7f759c0104b3a95d8
+        </group>
+>>>>>>> 3b57621ed5e315bef2f1e3a819905224a812eb33
     </open-files>
 </project-private>

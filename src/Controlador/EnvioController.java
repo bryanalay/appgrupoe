@@ -10,6 +10,7 @@ import Modelo.DTO.Cliente;
 import Modelo.DTO.Envio;
 import Vista.Cliente.ClienteForm;
 import Vista.Envio.EnvioForm;
+import Vista.Envio.PedidoForm;
 import Vista.Secretaria.SecretariaForm;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -136,6 +137,23 @@ public class EnvioController {
             }
         });*/
 
+        clt.btnAbrirPedido.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Envio cosoEnv = getAllValueRow();
+                    System.out.println(cosoEnv.getId());                     
+                    PedidoForm pedidoForm = new PedidoForm(cosoEnv);                    
+                    pedidoForm.setVisible(true);
+                    
+                    clt.setVisible(false);
+                } catch (SQLException ex) {
+                    Logger.getLogger(EnvioController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }); 
+        
+        
         cargar();
         limpiarTodo();
     }
@@ -231,9 +249,11 @@ public class EnvioController {
         
         if(rowSelected > -1){
             Object id = clt.tbEnvio.getValueAt(rowSelected,0);
+            Object fecha = clt.tbEnvio.getValueAt(rowSelected, 1);
             Object ruc = clt.tbEnvio.getValueAt(rowSelected, 2);
             Object detalles = clt.tbEnvio.getValueAt(rowSelected, 3);
             Object peso = clt.tbEnvio.getValueAt(rowSelected, 4);
+            Object costo = clt.tbEnvio.getValueAt(rowSelected, 6);
             Object dir = clt.tbEnvio.getValueAt(rowSelected, 7);
             Object cidest = clt.tbEnvio.getValueAt(rowSelected, 8);
             Object telf = clt.tbEnvio.getValueAt(rowSelected, 9);
@@ -241,10 +261,13 @@ public class EnvioController {
             Object inter = clt.tbEnvio.getValueAt(rowSelected, 5);
             
             cli.setId(id.toString());
+            cli.setFecha(fecha.toString());
             cli.setRucCliente(ruc.toString());
             cli.setPeso(peso.toString());
             cli.setDetalles(detalles.toString());
+            cli.setCosto(costo.toString());
             state = stst.toString();
+            cli.setEstado(state);
             cli.setCiDestinatario(cidest.toString());
             cli.setTelefono(telf.toString());
             //cli.setCorreo(corr.toString());

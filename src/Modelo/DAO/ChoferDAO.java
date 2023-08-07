@@ -41,10 +41,41 @@ public class ChoferDAO{
         }
         return null;
     }
+    
+    public Chofer getChoferDisp() throws SQLException{
+        String query = "exec dbo.ObtenerChofer '';";
+        ArrayList<Chofer> chofer = new ArrayList();
+        try {
+            Connection conn = Conexion.getConexion();
+            CallableStatement cstmt = conn.prepareCall(query);
+            ResultSet result = cstmt.executeQuery();
+            //System.out.println("Choferes res call: "+result.getString("CEDULA"));
+            while(result.next()){
+                Chofer cho = new Chofer();
+                cho.setCi(result.getString("CEDULA"));
+                cho.setNombre(result.getString("NOMBRE"));
+                cho.setApellido(result.getString("APELLIDO"));
+                cho.setCelular(result.getString("CELULAR"));
+                cho.setFecha(result.getString("FECHA DE NACIMIENTO")); 
+                cho.setCorreo(result.getString("CORREO"));
+                cho.setDireccion(result.getString("DIRECCION"));
+                cho.setDisponibilidad(result.getString("DISPONIBILIDAD"));
+                chofer.add(cho);
+            }            
+            conn.close();
+            return chofer.get(0);
+            //cstmt.setString(1, query);
+        } catch (SQLException e) {
+            /*JOptionPane.showMessageDialog(null, "No hay choferes...!");*/
+            System.out.println("Ex: "+e);
+        }
+        return null;
+    }
+    
     //leer empleado por id
-     public List<Chofer> getVehiculoByRuc(String ruc){
-        String query = "{CALL ObtenerVehiculo(?)}";
-        ArrayList<Chofer> vehiculo = new ArrayList();
+     public Chofer getVehiculoByRuc(String ruc){
+        String query = "Exec ObtenerChoferDisponible '';";
+        ArrayList<Chofer> chofer = new ArrayList();
         try {
             Connection conn = Conexion.getConexion();
             CallableStatement cstmt = conn.prepareCall(query);
@@ -63,7 +94,7 @@ public class ChoferDAO{
                 Chofer.add(cho);
             }            
             conn.close();
-            return vehiculo;
+            return chofer.get(0);
         } catch (SQLException ex) {
             System.out.println("Error> "+ex);
         }        
@@ -130,6 +161,23 @@ public class ChoferDAO{
         } catch (SQLException ex) {
             System.out.println("Error> "+ex);
         } 
+        
+        return false;
+    }
+    
+    public boolean asignarChofer(String ci,int idPedido){
+        String query = "{CALL AsignarEnvio(?,?)}";
+        try {
+            Connection conn = Conexion.getConexion();
+            CallableStatement cstmt = conn.prepareCall(query);
+            cstmt.setInt(1,idPedido);
+            cstmt.setString(2, ci);
+            cstmt.executeUpdate();
+            conn.close();
+            return true;
+        } catch (SQLException ex) {
+            System.out.println("Error> "+ex);
+        }
         
         return false;
     }
