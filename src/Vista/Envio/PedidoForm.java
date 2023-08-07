@@ -84,64 +84,96 @@ public class PedidoForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+<<<<<<< HEAD
+=======
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+>>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
 
         jPanel1.setBackground(new java.awt.Color(223, 223, 236));
 
         btnAsignar.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
         btnAsignar.setText("Asignar Chofer");
+        jPanel1.add(btnAsignar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
 
         btnFinal.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
         btnFinal.setText("Finalizar Pedido");
+        jPanel1.add(btnFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, -1, -1));
 
         jLabel1.setText("ID");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 65, -1, -1));
 
         jLabel2.setText("IDRUC");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(134, 99, -1, -1));
 
         btnRegresarAlMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/RegresoMenú.png"))); // NOI18N
+        jPanel1.add(btnRegresarAlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
 
         btnFactura.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
         btnFactura.setText("Ver Factura");
+        jPanel1.add(btnFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, -1, -1));
 
         jLabel3.setText("FECHA");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 133, -1, -1));
 
         jLabel4.setText("DETALLES");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(116, 167, -1, -1));
 
         jLabel5.setText("PESO");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 201, -1, -1));
 
         jLabel6.setText("INTERPROVINCIAL");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 65, -1, -1));
 
         jLabel7.setText("COSTO");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 99, -1, -1));
 
         jLabel8.setText("DIRECCION");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 133, -1, -1));
 
         jLabel9.setText("CI DESTINO");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 167, -1, -1));
 
         jLabel10.setText("TELEFONO");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 201, -1, -1));
 
         jLabel11.setText("ESTADO");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 235, -1, -1));
 
         lblId.setText("asdasd");
+        jPanel1.add(lblId, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 65, 43, -1));
 
         lblRuc.setText("jLabel12");
+        jPanel1.add(lblRuc, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 99, -1, -1));
 
         lblFecha.setText("jLabel12");
+        jPanel1.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 133, 149, -1));
 
         lblDetalles.setText("jLabel12");
+        jPanel1.add(lblDetalles, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 167, 149, -1));
 
         lblPeso.setText("jLabel12");
+        jPanel1.add(lblPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 201, 149, -1));
 
         lblInter.setText("jLabel12");
+        jPanel1.add(lblInter, new org.netbeans.lib.awtextra.AbsoluteConstraints(535, 65, -1, -1));
 
         lblCosto.setText("jLabel12");
+        jPanel1.add(lblCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(535, 99, -1, -1));
 
         lblDiDest.setText("jLabel12");
+        jPanel1.add(lblDiDest, new org.netbeans.lib.awtextra.AbsoluteConstraints(535, 167, -1, -1));
 
         lblDir.setText("jLabel12");
+        jPanel1.add(lblDir, new org.netbeans.lib.awtextra.AbsoluteConstraints(535, 133, -1, -1));
 
         lblTel.setText("jLabel12");
+        jPanel1.add(lblTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(535, 201, -1, -1));
 
         lblEstado.setText("jLabel12");
+        jPanel1.add(lblEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 235, -1, -1));
 
+<<<<<<< HEAD
         jLabel12.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 180, 85));
         jLabel12.setText("PEDIDO");
@@ -272,6 +304,17 @@ public class PedidoForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+=======
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 718, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
+>>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         );
 
         pack();
