@@ -88,6 +88,7 @@ public class EnvioForm extends javax.swing.JFrame {
         checkInter = new javax.swing.JCheckBox();
         jLabel10 = new javax.swing.JLabel();
         txtCIdest = new javax.swing.JTextField();
+        btnAbrirPedido = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 255));
@@ -128,7 +129,7 @@ public class EnvioForm extends javax.swing.JFrame {
                 btnGenerarFacturaActionPerformed(evt);
             }
         });
-        panelCont.add(btnGenerarFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 260, -1, -1));
+        panelCont.add(btnGenerarFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, 180, -1));
 
         jLabel1.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 180, 85));
@@ -204,6 +205,9 @@ public class EnvioForm extends javax.swing.JFrame {
         panelCont.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, -1, -1));
         panelCont.add(txtCIdest, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 110, -1));
 
+        btnAbrirPedido.setText("Abrir Pedido");
+        panelCont.add(btnAbrirPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 260, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -273,6 +277,7 @@ public class EnvioForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnAbrirPedido;
     public javax.swing.JButton btnEdit;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnGenerarFactura;
