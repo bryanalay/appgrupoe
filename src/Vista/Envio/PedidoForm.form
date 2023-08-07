@@ -24,206 +24,29 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
-          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-=======
           <Component id="jPanel1" alignment="0" pref="718" max="32767" attributes="0"/>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
-=======
           <Component id="jPanel1" alignment="1" pref="368" max="32767" attributes="0"/>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="jPanel1">
-<<<<<<< HEAD
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ec" green="df" red="df" type="rgb"/>
-        </Property>
-      </Properties>
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btnAsignar" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="lblEstado" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="lblRuc" max="32767" attributes="0"/>
-                                      <Component id="lblFecha" max="32767" attributes="0"/>
-                                      <Component id="lblDetalles" max="32767" attributes="0"/>
-                                      <Component id="lblPeso" max="32767" attributes="0"/>
-                                      <Component id="lblId" min="-2" pref="38" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblTel" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblDiDest" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblCosto" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblInter" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblDir" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
-                          <Component id="btnFactura" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="254" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="btnFinal" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="280" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnRegresarAlMenu" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="613" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                  <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="44" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblInter" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="lblId" alignment="1" min="-2" pref="16" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblRuc" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblCosto" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblFecha" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblDir" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblDetalles" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblDiDest" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblPeso" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblTel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblEstado" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnAsignar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnFinal" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnFactura" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-              </Group>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnRegresarAlMenu" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="359" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-          </Group>
-        </DimensionLayout>
-=======
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
         <Property name="useNullLayout" type="boolean" value="false"/>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JButton" name="btnAsignar">
           <Properties>
-<<<<<<< HEAD
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Century" size="18" style="1"/>
-            </Property>
-=======
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
             <Property name="text" type="java.lang.String" value="Asignar Chofer"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
-<<<<<<< HEAD
-        </Component>
-        <Component class="javax.swing.JButton" name="btnFinal">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Century" size="18" style="1"/>
-            </Property>
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="140" y="280" width="-1" height="-1"/>
@@ -232,46 +55,36 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnFinal">
           <Properties>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
             <Property name="text" type="java.lang.String" value="Finalizar Pedido"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="460" y="280" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="text" type="java.lang.String" value="ID"/>
           </Properties>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="157" y="65" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="text" type="java.lang.String" value="IDRUC"/>
           </Properties>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="134" y="99" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JButton" name="btnRegresarAlMenu">
           <Properties>
@@ -282,14 +95,6 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
-<<<<<<< HEAD
-        </Component>
-        <Component class="javax.swing.JButton" name="btnFactura">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Century" size="18" style="1"/>
-            </Property>
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="6" y="6" width="-1" height="-1"/>
@@ -298,137 +103,106 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnFactura">
           <Properties>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
             <Property name="text" type="java.lang.String" value="Ver Factura"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="320" y="320" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="text" type="java.lang.String" value="FECHA"/>
           </Properties>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="131" y="133" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="text" type="java.lang.String" value="DETALLES"/>
           </Properties>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="116" y="167" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="text" type="java.lang.String" value="PESO"/>
           </Properties>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="140" y="201" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
             <Property name="text" type="java.lang.String" value="INTERPROVINCIAL"/>
           </Properties>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="411" y="65" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
             <Property name="text" type="java.lang.String" value="COSTO"/>
           </Properties>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="411" y="99" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
             <Property name="text" type="java.lang.String" value="DIRECCION"/>
           </Properties>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="411" y="133" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
             <Property name="text" type="java.lang.String" value="CI DESTINO"/>
           </Properties>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="411" y="167" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel10">
           <Properties>
             <Property name="text" type="java.lang.String" value="TELEFONO"/>
           </Properties>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="411" y="201" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel11">
           <Properties>
             <Property name="text" type="java.lang.String" value="ESTADO"/>
           </Properties>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="231" y="235" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="lblId">
           <Properties>
@@ -437,14 +211,11 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="186" y="65" width="43" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="lblRuc">
           <Properties>
@@ -453,14 +224,11 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="186" y="99" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="lblFecha">
           <Properties>
@@ -469,14 +237,11 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="186" y="133" width="149" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="lblDetalles">
           <Properties>
@@ -485,14 +250,11 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="186" y="167" width="149" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="lblPeso">
           <Properties>
@@ -501,14 +263,11 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="186" y="201" width="149" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="lblInter">
           <Properties>
@@ -517,14 +276,11 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="535" y="65" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="lblCosto">
           <Properties>
@@ -533,14 +289,11 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="535" y="99" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="lblDiDest">
           <Properties>
@@ -549,14 +302,11 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="535" y="167" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="lblDir">
           <Properties>
@@ -565,14 +315,11 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="535" y="133" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="lblTel">
           <Properties>
@@ -581,14 +328,11 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
-<<<<<<< HEAD
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="535" y="201" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
         <Component class="javax.swing.JLabel" name="lblEstado">
           <Properties>
@@ -597,25 +341,11 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
-<<<<<<< HEAD
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel12">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Century" size="36" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="55" green="b4" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="PEDIDO"/>
-          </Properties>
-=======
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="292" y="235" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
->>>>>>> f7f845b321b9a726af5256ee4ad67ab7fb248be8
         </Component>
       </SubComponents>
     </Container>
