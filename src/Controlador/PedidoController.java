@@ -10,6 +10,7 @@ import Modelo.DTO.Chofer;
 import Modelo.DTO.Envio;
 import Vista.Envio.EnvioForm;
 import Vista.Envio.PedidoForm;
+import Vista.Factura.FacturaForm;
 import Vista.Secretaria.SecretariaForm;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -101,6 +102,7 @@ public class PedidoController {
                 
             }
         });
+
         
         Load(cform);
         cform.cargar();
@@ -112,18 +114,30 @@ public class PedidoController {
 //        }
     }
     
+    
+    
     public PedidoController() {
     }    
-    
+
     //private String state;
 
     public void Load(PedidoForm cform) throws SQLException {
 
-        cform.btnFactura.addActionListener(new ActionListener() {
+            cform.btnFactura.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //abre factura
-                //envia pedido clase
+                try {
+                    FacturaForm factura= new FacturaForm(cform.env);
+                    System.out.print(cform.env.getDetalles());
+                    System.out.print("hola");
+                    factura.cargar();
+                    factura.setVisible (true) ;
+                    cform.setVisible(false);
+                } catch (SQLException ex) {
+                    Logger.getLogger(PedidoController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+               
             }
         }); 
 
