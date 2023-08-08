@@ -21,10 +21,11 @@ String ciDestinatario;
 String telefono;
 String estado;
 String fechaEntrega;
+String ciChofer;
 
 public Envio(){}
 
-public Envio(String id, String fecha, String rucCliente, String detalles, String peso, String envioInterprov, String costo, String direccion, String ciDestinatario, String telefono, String estado, String fechaEntrega) {
+public Envio(String id, String fecha, String rucCliente, String detalles, String peso, String envioInterprov, String costo, String direccion, String ciDestinatario, String telefono, String estado, String fechaEntrega,String ciChofer) {
         this.id = id;
         this.fecha = fecha;
         this.rucCliente = rucCliente;
@@ -37,6 +38,15 @@ public Envio(String id, String fecha, String rucCliente, String detalles, String
         this.telefono = telefono;
         this.estado = estado;
         this.fechaEntrega = fechaEntrega;
+        this.ciChofer = ciChofer;
+    }
+
+    public String getCiChofer() {
+        return ciChofer;
+    }
+
+    public void setCiChofer(String ciChofer) {
+        this.ciChofer = ciChofer;
     }
 
     public String getId() {

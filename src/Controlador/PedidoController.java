@@ -30,14 +30,14 @@ import javax.swing.table.DefaultTableModel;
  */
 public class PedidoController {
     //private Envio envioObj = new Envio();
-
+    
     //PedidoForm cform;
     //regresar al home
     
     public void PedidoController(PedidoForm cform) throws SQLException{
         //Envio env = cform.getEnv();
         //System.out.println("Esto es de cforn.env: "+env.getDetalles());
-        
+        //String ciGlobal;
         cform.btnRegresarAlMenu.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -60,9 +60,19 @@ public class PedidoController {
             public void actionPerformed(ActionEvent e) {
                 String ci = "";
                 ChoferDAO chdao = new ChoferDAO();
+                EnvioDAO envdao = new EnvioDAO();
                 try {
                     Chofer chf = chdao.getChoferDisp();
                     ci = chf.getCi();
+                    //cform.env.setCiChofer(ci);
+                    String status = "Ocupado";
+                    boolean res = chdao.cambiarDisponChofer(ci, status);
+                    boolean setCi = envdao.agregarCiAEnvio(ci, Integer.parseInt(cform.env.getId()));
+                    if(res){
+                        JOptionPane.showMessageDialog(null, "Se cambio a ocupado");
+                    }else{
+                        JOptionPane.showMessageDialog(null, "No se cambio a ocupado");
+                    }
                     System.out.println("este es el CI del chofer asignado: "+ci);
                 } catch (SQLException ex) {
                     System.out.println("No hay choferes disponibles");
@@ -90,7 +100,11 @@ public class PedidoController {
             public void actionPerformed(ActionEvent e) {
                 EnvioDAO endai = new EnvioDAO();
                 cform.env.setEstado("Finalizado");
+                ChoferDAO chdao  = new ChoferDAO();                 
                 boolean res = endai.editarEnvio(cform.env);
+                chdao.cambiarDisponChofer(cform.env.getCiChofer(), "Disponible");
+                System.out.println("Este es el CI del chofer, si abro un pedido con chofer ya asignado: "
+                        +cform.env.getCiChofer());
                 if(res){
                     JOptionPane.showMessageDialog(null, "Envio finalizado!!");
                     try {

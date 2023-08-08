@@ -21,7 +21,7 @@ import utils.Conexion;
  */
 public class EnvioDAO {
     public List<Envio> getEnvios() throws SQLException{
-        String query = "Exec ObtenerPedidoEnvio '';";
+        String query = "Exec ObtenerPedidoEnvio2 '';";
         ArrayList<Envio> envios = new ArrayList();
         try {
             Connection conn = Conexion.getConexion();
@@ -41,6 +41,7 @@ public class EnvioDAO {
                 env.setTelefono(result.getString("TELEFONO DESTINATARIO"));
                 env.setEstado(result.getString("ESTADO"));
                 env.setFechaEntrega(result.getString("FECHA FINALIZACION"));
+                env.setCiChofer(result.getString("CI CHOFER"));
                 
                 envios.add(env);
             }            
@@ -134,6 +135,24 @@ public class EnvioDAO {
             return true;
         } catch (SQLException ex) {
             System.out.println("Error> "+ex);
+        } 
+        
+        return false;
+    }
+    
+    public boolean agregarCiAEnvio(String ci,int idEnvio){
+    String query = "UPDATE ENVIO SET CICHOFER = ? WHERE ID_PEDIDO = ?;";
+        try {
+            Connection conn = Conexion.getConexion();
+            CallableStatement cstmt = conn.prepareCall(query);
+            cstmt.setString(1, ci);
+            cstmt.setInt(2, idEnvio);
+            cstmt.executeUpdate();
+            //System.out.println("Res de eliminar env: "+res);
+            conn.close();
+            return true;
+        } catch (SQLException ex) {
+            System.out.println("Error en agregarCiAEnvio> "+ex);
         } 
         
         return false;

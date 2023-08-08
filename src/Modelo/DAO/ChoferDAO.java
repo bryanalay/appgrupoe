@@ -37,14 +37,14 @@ public class ChoferDAO{
             //cstmt.setString(1, query);
         } catch (SQLException e) {
             /*JOptionPane.showMessageDialog(null, "No hay choferes...!");*/
-            System.out.println("Ex: "+e);
+            System.out.println("Ex getChofer: "+e);
         }
         return null;
     }
     
     public Chofer getChoferDisp() throws SQLException{
-        String query = "exec dbo.ObtenerChofer '';";
-        ArrayList<Chofer> chofer = new ArrayList();
+        String query = "exec dbo.ObtenerChoferDisponible '';";
+        ArrayList<Chofer> choferes = new ArrayList();
         try {
             Connection conn = Conexion.getConexion();
             CallableStatement cstmt = conn.prepareCall(query);
@@ -60,10 +60,10 @@ public class ChoferDAO{
                 cho.setCorreo(result.getString("CORREO"));
                 cho.setDireccion(result.getString("DIRECCION"));
                 cho.setDisponibilidad(result.getString("DISPONIBILIDAD"));
-                chofer.add(cho);
+                choferes.add(cho);
             }            
             conn.close();
-            return chofer.get(0);
+            return choferes.get(0);
             //cstmt.setString(1, query);
         } catch (SQLException e) {
             /*JOptionPane.showMessageDialog(null, "No hay choferes...!");*/
@@ -96,7 +96,7 @@ public class ChoferDAO{
             conn.close();
             return chofer.get(0);
         } catch (SQLException ex) {
-            System.out.println("Error> "+ex);
+            System.out.println("Error obtenerChoferDisponible> "+ex);
         }        
         return null;
     }
@@ -119,7 +119,7 @@ public class ChoferDAO{
             conn.close();
             return true;
         } catch (SQLException ex) {
-            System.out.println("Error> "+ex);
+            System.out.println("Error crearChofer> "+ex);
         }
         
         return false;
@@ -143,7 +143,7 @@ public class ChoferDAO{
             conn.close();
             return true;
         } catch (SQLException ex) {
-            System.out.println("Error> "+ex);
+            System.out.println("Error editarChofer> "+ex);
         }
         return false;
     }
@@ -176,7 +176,24 @@ public class ChoferDAO{
             conn.close();
             return true;
         } catch (SQLException ex) {
-            System.out.println("Error> "+ex);
+            System.out.println("Error asignarEnvio> "+ex);
+        }
+        
+        return false;
+    }
+    
+    public boolean cambiarDisponChofer(String ci,String status){
+        String query = "{CALL ModificarDisponibilidadChofer(?,?)}";
+        try {
+            Connection conn = Conexion.getConexion();
+            CallableStatement cstmt = conn.prepareCall(query);
+            cstmt.setString(1,ci);
+            cstmt.setString(2, status);
+            ResultSet res = cstmt.executeQuery();
+            conn.close();
+            return true;
+        } catch (SQLException ex) {
+            System.out.println("Error cambiarDispChofer> "+ex);
         }
         
         return false;

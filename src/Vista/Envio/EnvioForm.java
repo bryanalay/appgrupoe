@@ -22,7 +22,7 @@ import javax.swing.ImageIcon;
  * @author Almi-
  */
 public class EnvioForm extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form ClienteForm
      */

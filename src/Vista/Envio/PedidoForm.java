@@ -16,9 +16,11 @@ import java.util.logging.Logger;
  */
 public class PedidoForm extends javax.swing.JFrame {
     public Envio env;
+    
 
     public PedidoForm(Envio env) throws SQLException {
         this.env = env;
+        System.out.println("CIchofer desde pedido form: "+env.getCiChofer());
         initComponents();        
         PedidoController pedidoController = new PedidoController();
         pedidoController.PedidoController(this);

@@ -259,6 +259,7 @@ public class EnvioController {
             Object telf = clt.tbEnvio.getValueAt(rowSelected, 9);
             Object stst = clt.tbEnvio.getValueAt(rowSelected, 10);
             Object inter = clt.tbEnvio.getValueAt(rowSelected, 5);
+            Object cichofer = clt.tbEnvio.getValueAt(rowSelected, 12);
             
             cli.setId(id.toString());
             cli.setFecha(fecha.toString());
@@ -270,6 +271,9 @@ public class EnvioController {
             cli.setEstado(state);
             cli.setCiDestinatario(cidest.toString());
             cli.setTelefono(telf.toString());
+            if(cichofer != null){
+                cli.setCiChofer(cichofer.toString());
+            }
             //cli.setCorreo(corr.toString());
             cli.setDireccion(dir.toString());
             cli.setEnvioInterprov(inter.toString());
@@ -324,13 +328,13 @@ public class EnvioController {
     private void cargar() throws SQLException{
         List<Envio> data = new EnvioDAO().getEnvios();
         String[] cols = {"ID","FECHA","RUC CLIENTE","DETALLES","PESO","ENVIO INTERPROVINCIAL",
-        "COSTO","DIRECCION DESTINATARIO","CI DESTINATARIO", "TELEFONO DESTINATARIO","ESTADO","FECHA FINALIZACION"};
+        "COSTO","DIRECCION DESTINATARIO","CI DESTINATARIO", "TELEFONO DESTINATARIO","ESTADO","FECHA FINALIZACION","CI CHOFER"};
         
         DefaultTableModel model = new DefaultTableModel(cols,0);
         for (Envio cola : data) {
             Object[] dt = {cola.getId(),cola.getFecha(),cola.getRucCliente(),cola.getDetalles(),
                 cola.getPeso(),cola.getEnvioInterprov(),cola.getCosto(),cola.getDireccion(),
-                cola.getCiDestinatario(),cola.getTelefono(),cola.getEstado(),cola.getFechaEntrega()};
+                cola.getCiDestinatario(),cola.getTelefono(),cola.getEstado(),cola.getFechaEntrega(),cola.getCiChofer()};
             
             model.addRow(dt);
         }
