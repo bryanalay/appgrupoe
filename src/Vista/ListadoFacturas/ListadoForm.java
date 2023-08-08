@@ -26,6 +26,7 @@ public class ListadoForm extends javax.swing.JFrame {
         initComponents();
         ListasController ls = new ListasController();
         ls.ListasController(this);
+        ls.Load();
         //icono app
         setIconImage(new ImageIcon (getClass().getResource("/Vista/Login/Camion.png")).getImage());
         //Tamaño de las imagenes

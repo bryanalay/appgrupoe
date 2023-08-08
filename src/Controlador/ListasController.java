@@ -45,7 +45,7 @@ public class ListasController {
         });
     }
      public void Load() throws SQLException{
-        
+         cargar();
     }
     
     public void cargar() throws SQLException{

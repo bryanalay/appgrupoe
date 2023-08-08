@@ -18,7 +18,7 @@ import java.util.List;
 public class FacturaDAO {
 
     public List<Factura> getFacturas() throws SQLException {
-        String query = "Exec LeerFactura 0;";
+        String query = "Select * from factura;";
         List<Factura> facturas = new ArrayList<>();
 
         try {
@@ -94,12 +94,12 @@ public class FacturaDAO {
             cstmt.setString(5, factura.getDetalles());
             cstmt.setString(6, factura.getTotal());
 
-            ResultSet res = cstmt.executeQuery();
-            System.out.println("Factura creada: " + res);
+            cstmt.executeUpdate();
+            System.out.println("Factura creada");
 
             return true;
         } catch (SQLException ex) {
-            System.out.println("Error: " + ex.getMessage());
+            System.out.println("Error en crear factura: " + ex.getMessage());
             // Manejar excepciones apropiadamente
         }
 
