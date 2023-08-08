@@ -5,11 +5,15 @@
  */
 package Vista.Factura;
 
+import Controlador.FacturaController;
 import Modelo.DTO.Envio;
 import Vista.Envio.EnvioForm;
+import java.awt.Image;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,8 +26,20 @@ public class FacturaForm extends javax.swing.JFrame {
      * Creates new form FacturaForm
      */
    public FacturaForm(Envio env) throws SQLException {
-        this.env = env;
-        initComponents();        
+                this.env = env;
+        initComponents();  
+        setIconImage(new ImageIcon (getClass().getResource("/Vista/Login/Camion.png")).getImage());
+        //Tamaño de las imagenes
+        ImageIcon img=new ImageIcon(getClass().getResource("/Images/camion.png"));
+        //ImageIcon img2=new ImageIcon(getClass().getResource("/Images/buscar.png"));
+        Icon tmn=new ImageIcon(img.getImage().getScaledInstance(lblF.getWidth(), lblF.getHeight(), Image.SCALE_DEFAULT));
+        //Icon tmn2=new ImageIcon(img2.getImage().getScaledInstance(lblBuscar.getWidth(), lblBuscar.getHeight(), Image.SCALE_DEFAULT));
+        lblF.setIcon(tmn);
+        
+        this.repaint();
+        FacturaController fc= new FacturaController();
+        fc.FacturaController(this);
+        fc.Load();      
         
         
     }
@@ -60,7 +76,7 @@ public class FacturaForm extends javax.swing.JFrame {
         lblDireccion = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         lblTotal = new javax.swing.JLabel();
-        lblFactura = new javax.swing.JLabel();
+        lblF = new javax.swing.JLabel();
         lblIdR = new javax.swing.JLabel();
         lblIdRecibo = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -115,8 +131,8 @@ public class FacturaForm extends javax.swing.JFrame {
         lblTotal.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel2.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 390, 70, 20));
 
-        lblFactura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Login/camion.png"))); // NOI18N
-        jPanel2.add(lblFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 86, 63));
+        lblF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Login/camion.png"))); // NOI18N
+        jPanel2.add(lblF, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 86, 63));
 
         lblIdR.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
         lblIdR.setText("FACTURA");
@@ -249,7 +265,7 @@ public class FacturaForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnEnviar;
+    public javax.swing.JButton btnEnviar;
     public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
@@ -267,7 +283,7 @@ public class FacturaForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblDetalles;
     private javax.swing.JLabel lblDireccion;
-    public javax.swing.JLabel lblFactura;
+    public javax.swing.JLabel lblF;
     private javax.swing.JLabel lblIDEnvio;
     private javax.swing.JLabel lblIdR;
     private javax.swing.JLabel lblIdRecibo;

@@ -9,6 +9,7 @@ import Modelo.DTO.Envio;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -20,6 +21,8 @@ public class PedidoForm extends javax.swing.JFrame {
 
     public PedidoForm(Envio env) throws SQLException {
         this.env = env;
+        //icono app
+        setIconImage(new ImageIcon (getClass().getResource("/Vista/Login/Camion.png")).getImage());
         System.out.println("CIchofer desde pedido form: "+env.getCiChofer());
         initComponents();        
         PedidoController pedidoController = new PedidoController();
@@ -79,15 +82,19 @@ public class PedidoForm extends javax.swing.JFrame {
         lblDir = new javax.swing.JLabel();
         lblTel = new javax.swing.JLabel();
         lblEstado = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
+        jPanel1.setBackground(new java.awt.Color(223, 223, 236));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnAsignar.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
         btnAsignar.setText("Asignar Chofer");
-        jPanel1.add(btnAsignar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, -1, -1));
+        jPanel1.add(btnAsignar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
 
+        btnFinal.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
         btnFinal.setText("Finalizar Pedido");
         jPanel1.add(btnFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, -1, -1));
 
@@ -100,8 +107,9 @@ public class PedidoForm extends javax.swing.JFrame {
         btnRegresarAlMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/RegresoMenú.png"))); // NOI18N
         jPanel1.add(btnRegresarAlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
 
+        btnFactura.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
         btnFactura.setText("Ver Factura");
-        jPanel1.add(btnFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, -1, -1));
+        jPanel1.add(btnFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, -1, -1));
 
         jLabel3.setText("FECHA");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 133, -1, -1));
@@ -163,6 +171,11 @@ public class PedidoForm extends javax.swing.JFrame {
         lblEstado.setText("jLabel12");
         jPanel1.add(lblEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 235, -1, -1));
 
+        jLabel12.setFont(new java.awt.Font("Century", 1, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 180, 85));
+        jLabel12.setText("PEDIDO");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -222,6 +235,7 @@ public class PedidoForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

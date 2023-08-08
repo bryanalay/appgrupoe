@@ -49,7 +49,7 @@ public class ListadoForm extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbLista = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         btnRegresarAlMenu = new javax.swing.JButton();
         lblFactura = new javax.swing.JLabel();
@@ -60,7 +60,7 @@ public class ListadoForm extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(223, 223, 236));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbLista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -71,7 +71,7 @@ public class ListadoForm extends javax.swing.JFrame {
                 "ID", "ID ENVIO", "RUC CLIENTE", "CI DESTINO", "DIRECCION", "DETALLES", "TOTAL"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tbLista);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 590, 230));
 
@@ -145,7 +145,7 @@ public class ListadoForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     public javax.swing.JLabel lblFactura;
+    public javax.swing.JTable tbLista;
     // End of variables declaration//GEN-END:variables
 }

@@ -45,7 +45,7 @@ public class EnvioForm extends javax.swing.JFrame {
         lblCliente.setIcon(tmn);
         lblBuscar.setIcon(tmn2);
         this.repaint();
-        
+        btnGenerarFactura.setVisible(false);
     }
     
 
@@ -123,13 +123,14 @@ public class EnvioForm extends javax.swing.JFrame {
 
         btnGenerarFactura.setBackground(new java.awt.Color(192, 255, 255));
         btnGenerarFactura.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
-        btnGenerarFactura.setText("Generar Factura");
+        btnGenerarFactura.setText("...");
+        btnGenerarFactura.setEnabled(false);
         btnGenerarFactura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGenerarFacturaActionPerformed(evt);
             }
         });
-        panelCont.add(btnGenerarFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, 180, -1));
+        panelCont.add(btnGenerarFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 480, 30, -1));
 
         jLabel1.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 180, 85));
@@ -155,6 +156,8 @@ public class EnvioForm extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel6.setText("PESO");
         panelCont.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
+
+        txtId.setEnabled(false);
         panelCont.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 150, -1));
 
         tbEnvio.setModel(new javax.swing.table.DefaultTableModel(
@@ -205,8 +208,10 @@ public class EnvioForm extends javax.swing.JFrame {
         panelCont.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, -1, -1));
         panelCont.add(txtCIdest, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 110, -1));
 
+        btnAbrirPedido.setBackground(new java.awt.Color(192, 255, 255));
+        btnAbrirPedido.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
         btnAbrirPedido.setText("Abrir Pedido");
-        panelCont.add(btnAbrirPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 260, -1, -1));
+        panelCont.add(btnAbrirPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 260, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
