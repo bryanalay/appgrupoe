@@ -54,6 +54,7 @@ public class ListadoForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnRegresarAlMenu = new javax.swing.JButton();
         lblFactura = new javax.swing.JLabel();
+        btnEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -86,6 +87,9 @@ public class ListadoForm extends javax.swing.JFrame {
 
         lblFactura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/ListadoFacturas/factura.png"))); // NOI18N
         jPanel1.add(lblFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 70, 70, 50));
+
+        btnEliminar.setText("Eliminar");
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 430, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -142,6 +146,7 @@ public class ListadoForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnRegresarAlMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

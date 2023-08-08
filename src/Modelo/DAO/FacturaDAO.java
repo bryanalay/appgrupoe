@@ -139,8 +139,8 @@ public class FacturaDAO {
             Connection conn = Conexion.getConexion();
             CallableStatement cstmt = conn.prepareCall(query);
             cstmt.setInt(1, id);
-            ResultSet res = cstmt.executeQuery();
-            System.out.println("Factura eliminada: " + res);
+            cstmt.executeUpdate();
+            System.out.println("Factura eliminada: ");
 
             return true;
         } catch (SQLException ex) {

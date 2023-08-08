@@ -45,9 +45,33 @@ public class ListasController {
         });
     }
      public void Load() throws SQLException{
-         cargar();
+        listas.btnEliminar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    eliminar(Integer.parseInt(getValueRow()));
+                    cargar();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ListasController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+         
+        cargar();
+         
     }
     
+    private void eliminar(int id) throws SQLException{
+        
+        boolean elim = new FacturaDAO().eliminarFactura(id);
+        if(elim){
+            cargar();
+            JOptionPane.showMessageDialog(null, "Factura eliminada correctamente...");
+        }else{
+            JOptionPane.showMessageDialog(null, "Error al eliminar factura");
+        }
+    }
+     
     public void cargar() throws SQLException{
         List<Factura> data = new FacturaDAO().getFacturas();
         String[] cols = {"ID","ID ENVIO","RUC CLIENTE","CI DESTINO","DIRECCION","DETALLES",
