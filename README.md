@@ -5,7 +5,7 @@ Este es un proyecto que utiliza las siguientes tecnologías:
 - **IDE:** NetBeans 17
 - **JDK:** Java SE 17
 - **Base de Datos:** SQL Management
-- **Conector JDBC:** JDBC (Java Database Connectivity)
+- **Conector JDBC:** JDBC (Java Database Connectivity, Ya viene en carpeta utils)
 
 ## Descripción del Proyecto
 
@@ -23,12 +23,15 @@ Antes de ejecutar este proyecto, asegúrate de tener instalados los siguientes c
 
 1. Clona este repositorio en tu máquina local.
 2. Abre el proyecto en NetBeans 17.
-3. Configura la conexión a la base de datos en el archivo de configuración `src/main/resources/config.properties`.
-4. Ejecuta la aplicación desde NetBeans o mediante la línea de comandos.
+3. Ejecuta la aplicación desde NetBeans.
 
 ## Uso
 
-Describe aquí cómo utilizar y probar la aplicación. Proporciona ejemplos de código si es necesario.
+1. Ingresa un CI y contraseña, como ejemplo:
+-CI:0123456789
+-PASS:123
+2. Se abre el menu donde podras acceder a varios modulos con su respectivi CRUD o mostrar informacion.
+3. Una vez termines de usar la aplicacion, cierra sesion y luego la app.
 
 ## Contribuciones
 
