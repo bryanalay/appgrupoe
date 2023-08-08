@@ -1,6 +1,6 @@
 # appgrupoe
 
-Este es un proyecto de ejemplo que utiliza las siguientes tecnologías:
+Este es un proyecto que utiliza las siguientes tecnologías:
 
 - **IDE:** NetBeans 17
 - **JDK:** Java SE 17
@@ -9,7 +9,7 @@ Este es un proyecto de ejemplo que utiliza las siguientes tecnologías:
 
 ## Descripción del Proyecto
 
-Este proyecto de ejemplo ilustra cómo utilizar las tecnologías mencionadas para desarrollar una aplicación Java que interactúa con una base de datos utilizando JDBC.
+Este proyecto ilustra cómo utilizar las tecnologías mencionadas para desarrollar una aplicación Java que interactúa con una base de datos utilizando JDBC.
 
 ## Requisitos
 
@@ -38,8 +38,4 @@ Si deseas contribuir a este proyecto, sigue los siguientes pasos:
 2. Crea una rama para tu funcionalidad o corrección de errores.
 3. Realiza tus cambios y realiza commits significativos.
 4. Envía un pull request describiendo tus cambios.
-
-## Contacto
-
-Si tienes alguna pregunta o comentario sobre este proyecto, puedes contactarme en [correo@example.com](mailto:correo@example.com).
 
