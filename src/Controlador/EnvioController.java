@@ -153,6 +153,16 @@ public class EnvioController {
             }
         }); 
         
+        clt.txtBuscar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    buscarEnvio(clt.txtBuscar.getText());
+                } catch (SQLException ex) {
+                    System.out.println("Error al buscar el envio");
+                }
+            }
+        });
         
         cargar();
         limpiarTodo();
@@ -376,4 +386,39 @@ public class EnvioController {
 
         clt.tbEnvio.setModel(model);
     }*/
+    private void buscarEnvio(String searchTerm) throws SQLException {
+        List<Envio> resultados = new ArrayList<>();
+        List<Envio> data = new EnvioDAO().getEnvios();
+
+        for (Envio envio : data) {
+            if (envio.getEstado().toLowerCase().contains(searchTerm.toLowerCase())
+                    ) {
+                resultados.add(envio);
+            }
+        }
+        if (resultados.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No se encontraron envios con la búsqueda proporcionada.");
+        } else {
+            mostrarResultados(resultados);
+            JOptionPane.showMessageDialog(null, "envios encontrados:"+ resultados.size());
+        }
+
+        //mostrarResultados(resultados);
+    }
+
+    // Método para mostrar los resultados de la búsqueda en la tabla
+    private void mostrarResultados(List<Envio> resultados) {
+        String[] cols = {"ID","FECHA","RUC CLIENTE","DETALLES","PESO","ENVIO INTERPROVINCIAL",
+        "COSTO","DIRECCION DESTINATARIO","CI DESTINATARIO", "TELEFONO DESTINATARIO","ESTADO","FECHA FINALIZACION","CI CHOFER"};
+        DefaultTableModel model = new DefaultTableModel(cols, 0);
+        for (Envio envio : resultados) {
+            Object[] dt = {envio.getId(), envio.getFecha(), envio.getRucCliente(),
+                    envio.getDetalles(), envio.getPeso(), envio.getEnvioInterprov(), envio.getCosto(),envio.getDireccion(),
+            envio.getCiDestinatario(),envio.getTelefono(),envio.getEstado(),envio.getFechaEntrega(),envio.getCiChofer()};
+            model.addRow(dt);
+            //JOptionPane.showMessageDialog(null, "Clientes encontrados: " + resultados.size());
+        }
+
+        clt.tbEnvio.setModel(model);
+    }
 }
